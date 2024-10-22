@@ -1,0 +1,44 @@
+<!--Old Style-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+   <head>
+    <link rel="stylesheet" href="../style.css"/>
+    <meta charset="UTF-8">
+    <title>Sphere Browser — Spyware Watchdog</title>
+  </head>
+  <body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <img src="../images/sphere_logo.png" alt="sphere browser logo">
+  <h1>Sphere Browser</h1>
+  <p>
+    Sphere Browser é um navegador web focado em privacidade feito pela Tenebris
+  </p>
+  <h2>Nível de Spyware: <font color=greenyellow>Possivelmente Spyware</font></h2>
+  <p>
+    Este programa foi testado com MITMProxy no Linux. O próprio Sphere Browser não contém nenhuma telemetria e realmente removeu todos os spywares da base de código do Chromium em que se baseia. No entanto, ele tem duas Red Flags - a página inicial padrão possui análises e você precisa executar análises em seu navegador para fazer o download. O software é limpo. Apenas as configurações e a maneira como você precisa baixá-lo e a falta de código-fonte impedem o título de "Não é Spyware". Você pode configurá-lo facilmente para não se conectar à página inicial padrão, pelo menos.
+  </p>
+  <h3>Pixel de rastreamento na página inicial padrão</h3>
+  <p>
+    O Sphere Browser é baseado em um recurso de "indentidades" que permite alterar a aparência do navegador para o resto da Internet de uma maneira bastante fácil - e, por padrão carrega o site <code>f.vision</code> que pode identificar sua nova identidade de maneira bastante centralizada e até inclui um pixel de rastreamento do serviço de análise getclicky. Se você quiser usar este navegador, você realmente não deveria usar esta página inicial padrão. Ele contrasta muito mal com os recursos de privacidade do navegador.
+  </p>
+  <img class="screenshot" src="../images/sphere_tracking.png" alt="getclicky tracking pixel on the sphere browser default homepage">
+  <h3>JavaScript de uma empresa do Google Analytics no site de download</h3>
+  <p>
+Outro problema é que você precisa carregar o JavaScript para baixar o próprio navegador em sphere.tenebris.cc/, que tentar carregar o código JS do Tenebris, bem como o JavaScript da mesma empresa de análise que tem o pixel de rastreamento em <code>f.vision</code>. Por que essas análises estão aqui se o navegador está tão focado em privacidade?
+  </p>
+  <img class="screenshot" src="../images/sphere_homepage.png" alt="getclicky tracking JS on the sphere browser download page">
+   <hr>
+  <center>
+  <p><b>
+  Este artigo foi editado pela última vez em 12/12/2018
+  </b></p>
+   <p>
+    <b>Esta é uma tradução do artigo em Inglês. Pode estar desatualizado. Compare as datas em ambos os artigos.</b>
+    <p>Se você quiser editar este artigo, ou contribuir com seu(s) próprio(s) artigo(s), visite-nos no repositório git no <a href="https://codeberg.org/shadow/SpywareWatchdog">Codeberg</a>.</p>
+    <p>Todas as contribuições devem ser licenciadas sob a licença CC0 para serem aceitas.</p>
+  <a href="../LICENSE.txt"><img class="icon" src="../images/cc0.png" alt="CC0 License"></a>
+  <p><a href="../articles/index.html">Back to catalog</a></p>
+  </center>
+  </body>
+
+</html>

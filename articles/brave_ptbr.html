@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="application/xhtml+xml;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Brave - Spyware Watchdog</title>
+    <link rel="stylesheet" href="../style.css"/>
+  </head>
+  <body>
+    <div class="case">
+      <div class="nav"><a href="index.html">&larr; Catalog</a></div>
+      <div class="main">
+        <img src="../images/brave/brave_logo.png" alt="Web Browser Logo"/>
+        <h1>Brave</h1>
+        <p>O Navegador Brave é um fork do Chromium com muitos recursos interessantes que não são encontrados em outros lugares, como Adblock integrado e outras extensões, proteção contra impressão digital, um menu de preferências mais limpo em comparação com outros forks do Chrome e a capacidade (opcional) de apoio automático (pago) aos websites que você visita. Os desenvolvedores o descrevem como <i>"Um Navegador que se preocupa com você."</i><sup><a href="#s1">[1]</a></sup> com as proteções de privacidade integradas.</p>
+        <h2>Nível de Spyware: <span class="orange">Alto</span></h2>
+        <p>O Brave é um software de atualização automática, usa o <a href="../articles/google.html">Google</a> como mecanismo de pesquisa padrão, possui telemetria embutida e até um feed de notícias ao estilo RSS semelhante ao Firefox Pocket. Essas não são coisas que vêm à mente se alguém imagina um navegador focado em privacidade. </p>
+        <h3>Atualizações automáticas</h3>
+        <p>O Brave verificará se há atualizações toda vez que você o executar, e você não conseguirá desativá-lo no navegador. No entanto, não está na lista de prioridades do Brave adicionar uma opção para tal.<sup><a href="#s2">[2]</a></sup> A razão pela qual não ser prioridade seria porque já se passou mais de um ano e ainda não houve uma implementação.</p>
+        <h3>Brave tem telemetria integrada</h3>
+        <p>Durante a execução, o Brave fará muitas requisições ao domínio <code>p3a.brave.com</code> como telemetria. Eles alegam que armazenam os dados coletados por vários dias.<sup><a href="#s8">[8]</a></sup> Esse recurso é uma opção que pode ser desativada. Esta opção pode ser desativada <a href="brave://settings/privacy">aqui</a>.</p>
+        <h3>Brave Today</h3>
+        <p>O Brave agora tem um novo recurso semelhante ao Firefox Pocket chamado Brave Today. Se você não sabe o que é o Firefox Pocket, é basicamente um feed de notícias ao estilo RSS que é mostrado em todas novas guias em branco. Infelizmente, este recurso do Brave é uma ferramenta de cadastro automático e envia muitas solicitações para o servidor do Brave. Não pode ser desativado por si só, mas <a href="brave://settings/newTab">definir as guias para uma página em branco</a> parece interromper as requisições.</p>
+        <h3>SafeBrowsing</h3>
+        <p>O Brave usa o SafeBrowsing. É um recurso que tenta "proteger" o usuário de sites e extensões potencialmente inseguros. No entanto, ele envia requisições para buscar as informações necessárias. O SafeBrowsing do Brave é desenvolvido pelo Google.<sup><a href="#s10">[10]</a></sup> Esta opção pode ser desativada <a href="brave://settings/security">aqui</a>.</p>
+        <h3>Recompensas Brave</h3>
+        <p>O Brave tem um programa de recompensas. Você pode encontrar mais informações sobre isso aqui.<sup><a href="#s3">[3]</a></sup> À primeira vista, parece que o programa de recompensas é opcional, mas o navegador faz requisições para esses domínios, indenpendente de você se inscrever ou não:</p>
+        <div class="center">
+          <p><code>rewards.brave.com</code></p>
+          <p><code>api.rewards.brave.com</code></p>
+          <p><code>grant.rewards.brave.com</code></p>
+        </div>
+        <p>Uma atualização rápida: essas requisições foram relatadas como um bug, e na maioria das vezes, foram corrigidas (com algumas excessões). Vou remover esta seção assim que o bug for completamente corrigido.<sup><a href="#s12">[12]</a></sup></p>
+        <h3>Requisições que valem a pena ser mencionadas</h3>
+        <p>O Brave na primeira execução envia uma requisição para buscar a biblioteca usada para verificar erros de ortografia:</p>
+        <img class="screenshot" src="../images/brave/brave-dict.png" alt="brave spelling library"/>
+        <p>O Brave na inicialização envia uma requisição para <code>variations.brave.com</code>. O Brave usa isso para ativar e desativar recursos. Ainda não há como desabilitar isso.<sup><a href="#s11">[11]</a></sup></p>
+        <img class="screenshot" src="../images/brave/brave-cert.png" alt="brave verification tool"/>
+        <p>O Brave busca a lista de afiliados através de <code>laptop-updates.brave.com</code>:</p>
+        <img class="screenshot" src="../images/brave/custom-headers.png" alt="custom headers"/>
+        <p>O Brave faz uma requisição para <code>static1.brave.com</code> uma vez ou outra, o que parece ser usado para buscar informações de plugin?<sup><a href="#s4">[4]</a></sup> Quando a URL foi digitada no navegador, ele foi redirecionado para uma página de erro 404 do Google.<sup><a href="#s9">[9]</a></sup></p>
+        <img class="screenshot" src="../images/brave/brave-static.png" alt="static brave"/>
+        <img class="screenshot" src="../images/brave/google-brave.png" alt="google error 404"/>
+        <p>Um rápido <code>curl --head static1.brave.com</code> mostra que o Brave usa o gstatic do Google, que também usa o Cloudflare:</p>
+        <img class="screenshot" src="../images/brave/brave-gstatic.png" alt="google error 404"/>
+        <p>Na primeira execução, o Brave busca cinco extensões de <code>brave-core-ext.s3.brave.com</code> e tenta instalá-las:</p>
+        <img class="screenshot" src="../images/brave/brave-extensions.png" alt="brave extensions"/>
+        <h3>Não é um Spyware, mas vale a pena ser mencionado</h3>
+        <h3>Mecanismo de pesquisa antiprivacidade por padrão</h3>
+        <p><a href="../articles/google.html">Google</a> é o mecanismo de pesquisa padrão do Brave. Para um navegador que afirma ser focado em privacidade, isso é um alerta. Eles pelo menos facilitam a alteração do mecanismo de pesquisa padrão na primeira execução.</p>
+      </div>
+      <hr/>
+      <div class="footer">
+        <div class="sources">
+          <h4>Fontes:</h4>
+          <ol>
+            <li id="s1"><a href="https://brave.com">Website do Brave</a> <a href="https://web.archive.org/web/20180609070708/https://brave.com">[web.archive.org]</a> <a href="https://archive.is/AjZnv">[archive.is]</a> <a href="https://ghostarchive.org/archive/JNS4O">[ghostarchive.org]</a></li>
+            <li id="s2"><a href="https://github.com/brave/brave-browser/issues/5576">Adicionar um recurso de desabilitar atualização automática</a> <a href="https://web.archive.org/web/20190530053311/https://github.com/brave/brave-browser/issues/5576">[web.archive.org]</a> <a href="https://archive.is/NzRxTgm">[archive.is]</a> <a href="https://ghostarchive.org/archive/6KRXL?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s3"><a href="https://brave.com/brave-rewards">Programa de Recompensas Brave</a> <a href="https://web.archive.org/web/20201227180815/https://brave.com/brave-rewards">[web.archive.org]</a> <a href="https://archive.is/0mLht">[archive.is]</a> <a href="https://ghostarchive.org/archive/F5lWl?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s4"><a href="https://static1.brave.com/chrome/config/plugins_3/plugins_linux.json">Informações de Plugin??</a> <a href="https://web.archive.org/web/20201229155943/https://static1.brave.com/chrome/config/plugins_3/plugins_linux.json">[web.archive.org]</a> <a href="https://ghostarchive.org/archive/owALS?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s5"><a href="https://www.bleepingcomputer.com/news/security/facebook-twitter-trackers-whitelisted-by-brave-browser">Facebook, rastreadores do Twitter na lista de permissões do Navegador Browser</a> <a href="http://web.archive.org/web/20190213055618/https://www.bleepingcomputer.com/news/security/facebook-twitter-trackers-whitelisted-by-brave-browser">[web.archive.org]</a> <a href="https://ghostarchive.org/archive/i1mvb?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s6"><a href="https://brave.com/features/">Recursos do Navegador Brave</a> <a href="http://web.archive.org/web/20190124134301/https://brave.com/features">[web.archive.org]</a> <a href="https://archive.is/UxdJf">[archive.is]</a> <a href="https://ghostarchive.org/archive/vYNnv?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s7"><a href="https://brave.com/script-blocking-exceptions-update">Atualização de excessões de bloqueio de Script</a> <a href="http://web.archive.org/web/20190214034944/https://brave.com/script-blocking-exceptions-update">[web.archive.org]</a> <a href="https://ghostarchive.org/archive/i1mvb?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s8"><a href="https://brave.com/privacy-preserving-product-analytics-p3a">Analytics do Brave</a> <a href="https://web.archive.org/web/20201229081726/https://brave.com/privacy-preserving-product-analytics-p3a">[web.archive.org]</a> <a href="https://ghostarchive.org/archive/ZoBSr?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s9"><a href="https://static1.brave.com">Site estático do Brave</a> <a href="https://archive.is/wWgtG">[archive.is]</a> <a href="https://web.archive.org/web/20190428070726/https://static1.brave.com/">[archive.org]</a></li>
+            <li id="s10"><a href="https://github.com/brave/brave-browser/wiki/Deviations-from-Chromium-(features-we-disable-or-remove)">Divergências do Brave para o Chromium</a> <a href="https://web.archive.org/web/20210611085211/https://github.com/brave/brave-browser/wiki/Deviations-from-Chromium-(features-we-disable-or-remove)">[web.archive.org]</a> <a href="https://ghostarchive.org/archive/RswOH?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s11"><a href="https://github.com/brave/brave-browser/issues/15711">Permitir e Desativar variações do Griffin </a> <a href="https://web.archive.org/web/20210612013031/https://github.com/brave/brave-browser/issues/15711">[web.archive.org]</a> <a href="https://ghostarchive.org/archive/oWzlF?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s12"><a href="https://github.com/brave/brave-browser/issues/14277">Faça requisições somente para  *.rewards.brave.com...</a> <a href="https://web.archive.org/web/20210621011812/https://github.com/brave/brave-browser/issues/14277">[web.archive.org]</a> <a href="https://ghostarchive.org/archive/cuTZl?kreymer=false">[ghostarchive.org]</a></li>
+          </ol>
+        </div>
+        <hr/>
+        <b>Esse artigo foi criado em  07/05/2018</b>
+        <br/>
+        <b>Esse artigo foi editado pela última vez em  17/08/2021</b>
+        <br/>
+        <b>Esta é uma tradução do artigo em Inglês. Pode estar desatualizado. Compare as datas em ambos os artigos.</b>
+        <p>Se você quiser editar este artigo, ou contribuir com seu(s) próprio(s) artigo(s), visite-nos no repositório git no <a href="https://codeberg.org/shadow/SpywareWatchdog">Codeberg</a>.</p>
+        <p>Todas as contribuições devem ser licenciadas sob a licença CC0 para serem aceitas.</p>
+        <a href="../LICENSE.txt"><img class="icon" src="../images/cc0.png" alt="CC0 License"/></a>
+      </div>
+    </div>
+  </body>
+</html>

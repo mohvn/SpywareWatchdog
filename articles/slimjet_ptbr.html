@@ -1,0 +1,99 @@
+<!--Old Style-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+  <meta http-equiv="Content-type" content="application/xhtml+xml;charset=utf-8"/>
+  <title>Slimjet — Spyware Watchdog</title>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+
+<body>
+  <div class="case">
+    <div class="nav"><a href="index.html">&larr; Catálogo</a></div>
+    <div class="main">
+      <img src="../images/slimjet_logo.png" alt="Slimjet Logo"/>
+      <h1>Slimjet</h1>
+      <p>
+        Slimjet é um clone do navegador SlimBrowser da FlashPeak que usa o Chromium como base.
+      </p>
+      <h2>Nível de Spyware: <span class="red">EXTREMAMENTE ALTO</span></h2>
+      <p>
+        O site da Slimjet afirma que está muito comprometido com a privacidade do usuário e que bloqueia o rastreamento do Google<sup><a href="#s1">[1]</a></sup>. No entanto, esta afirmação <b><font color=red>não é verdadeira</font></b>. Slimjet está constantemente enviando informações para o Google e se conectando aos serviços do Google. O Slimjet afirma estar preocupado com a privacidade, mas em última análise, retém quase todos os recursos de spyware encontrados no Google Chrome, bem como spywares adicionais adicionados pelo FlashPoint. Desta forma, Slimjet consegue implementar todo o spyware que se encontra em navegadores como o Google Chrome, só que em vez de uma empresa ter esta informação, é dividido entre várias empresas... 
+          </p>
+          <h3>Ligando para casa</h3>
+          <p>
+          Embora em seu site, FlashPeak afirme que:  <i>"Slimjet não envia nenhum dado de uso de volta ao Google como o Chrome"</i><sup><a href="#s1">[1]</a></sup>
+          no momento em que o ligo com o MITMproxy em execução, sou recebido com isso:
+          </p>
+          <img class="screenshot" src="../images/sj_google_requests.png" alt="Slimjet sending requests to all sorts of google services">
+          <p>
+          Então, essa afirmação simplesmente não é verdadeira. Ele ainda contém muitos spywares do Google, se ainda estiver se contectando a tantos serviços do Google. O que é surpreendente é que ele não parecia se conectar a nenhum servidor explicitamente operado pelo FlashPeak quando eu o estava testando. Mesmo assim, afirma coletar informações sobre seus usuários para uso interno.<sup><a href="#s2">[2]</a></sup> Portanto, deve estar "ligando para casa" e enviando informações para o GOogle. Talvez envie informações através de algum tipo de serviço web do Google?
+          </p>
+          <h3>O Mecanismo de Pesquisa Padrão é um Spyware</h3>
+          <p>
+            O mecanismo de pesquisa padrão é o  <a href="../articles/bing.html">Bing</a>, que vende suas informações aos anunciantes. Se isso não for suficiente, é  
+          <i>"servido do fpseek.com"</i>, o que significa que você não apenas está expondo suas informações ao Bing, mas também sendo registrado pelo fpseek, que tem sua própria política de privacidade<sup><a href="#s3">[3]</a></sup>. Sempre que você pesquisa algo usando o mecanismo de pesquisa padrão, as solicitações são enviadas ao Bing e ao fpseek.
+          </p>
+          <img class="screenshot" src="../images/fpseek.png" alt="Fpseek connection">
+          <p>
+            Portanto, você não está apenas compartilhando tudo com a Microsoft, agora há outra empresa analisando todas as suas pesquisas. Este é um mecanismo de pesquisa padrão excepcionalmente ruim por causa da quantidade de informações que são vazadas. A própria Fpseek é uma empresa que parece estar rastreando como os usuários interagem com anúncios e diz que usa as informações que coleta sobre seus usuários para: "
+          </p>
+          <p><i>
+            "...manter e melhorar a qualidade e operação do Software e Serviços, incluindo, monitoramento da visibilidade e interação com anúncios, resultados de pesquisa e outros produtos e serviços fornecidos pela Empresa.
+          </i><sup><a href="#s3">[3]</a></sup></p>
+          <p>
+          Assim, parece que suas pesquisas são enviadas para duas empresas de publicidade em vez de apenas uma. No mínimo, quando o mecanismo de pesquisa é alterado para uma alternativa como o DuckDuckGo, os pedidos para fpseek param.
+          </p>
+          <h3>Coletando informações sobre usuários</h3>
+          <p>
+          A Slimjet alega coletar <i>"algumas informações anônimas de estatísticas de uso de recursos"</i>, e alega não registrar seu IP ou vender essas informações a anunciantes. No entanto, ainda é um spyware opcional.
+          </p>
+          <h3>Usando o serviço Microsoft BITS para fazer upload do histórico de pesquisa para os servidores do Google</h3>
+          <p>
+          Quando você iniciar o Slimjet, ele começará a usar o BITS (Background Intelligent Transfer Service), projetando para usar largura de banda sobressalente para transferir atualizações e outras informações. Essas requisições são enviadas entre o Slimjet e um servidor do Google, com confirmação do Process Monitor e do MITMproxy:
+          </p>
+          <img class="screenshot" src="../images/sj_google_BITS.png" alt="Bits1">
+          <img class="screenshot" src="../images/sj_google_BITS_2.png" alt="Bits2">
+          <img class="screenshot" src="../images/sj_google_BITS_3.png" alt="Bits3">
+          <p>
+          As informações pessoais foram censuradas a partir dessas imagens. Não está claro para que isso serve especificamente, mas isso provavaelmenteestá sendo feito para implemnentar a "SINCRONIZAÇÂO DE NUVEM DE BOOKMARK E DADOS" anunciada no site da Slimjet. Provavelmente é assim que eles carregam todo o seu histórico de pesquisa e favoritos em seus serviços de nuvem, que parecem ser fornecidos pelo Google. Não há outros recursos ou requisições feitas que exijam que grande quantidades de dados sejam enviadas para um servidor externo dessa maneira, portanto, por processo de eliminação, essa é minha teoria sobre como ela é implementada.
+          </p>
+          <img class="screenshot" src="../images/sj_cloud.png" alt="cloud sync feature">
+          <p>
+          Obviamente, você pode dizer que qualquer tipo de serviço para sincronizar seu histórico de pesquisa "na nuvem" é um pesadelo de privacidade. Agora, o Google e o Slimjet têm acesso ao seu histórico de pesquisa...
+          </p>
+    </div>
+    <hr>
+    <div class="footer">
+      <div class="sources">
+        <h4>Fontes:</h4>
+        <ol>
+          <li id="s1">
+            <a href="https://www.slimjet.com/">Navegador da web mais rápido que bloqueia anúncios automaticamente</a>
+            <a href="http://web.archive.org/web/20180624103729/https://www.slimjet.com/">[web.archive.org]</a>
+            <a href="http://archive.is/67qZa">[archive.is]</a>
+          </li>
+          <li id="s2">
+            <a href="https://www.slimjet.com/en/privacy-policy.htm">Política de Privacidade</a>
+            <a href="http://web.archive.org/web/20180624104143/https://www.slimjet.com/en/privacy-policy.htm">[web.archive.org]</a><br>
+          </li>
+          <li id="s3">
+            <a href="http://info.fpseek.com/privacy-policy/">Política de Privacidade – Fpseek</a>
+            <a href="http://web.archive.org/web/20170619202653/http://info.fpseek.com/privacy-policy/">[web.archive.org]</a>
+            <a href="http://archive.is/fHly1">[archive.is]</a><br>
+          </li>
+        </ol>
+      </div>
+      <hr>
+      <b>Esse artigo foi editado pela última vez em 04/08/2018</b>
+        <br/>
+        <b>Esta é uma tradução do artigo em Inglês. Pode estar desatualizado. Compare as datas em ambos os artigos.</b>
+        <p>Se você quiser editar este artigo, ou contribuir com seu(s) próprio(s) artigo(s), visite-nos no repositório git no <a href="https://codeberg.org/shadow/SpywareWatchdog">Codeberg</a>.</p>
+        <p>Todas as contribuições devem ser licenciadas sob a licença CC0 para serem aceitas.</p>
+      <a href="../LICENSE.txt"><img class="icon" src="../images/cc0.png" alt="CC0 License"/></a>
+    </div>
+  </div>
+</body>
+
+</html>

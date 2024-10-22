@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="application/xhtml+xml;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Vivaldi — Spyware Watchdog</title>
+    <link rel="stylesheet" href="../style.css"/>
+  </head>
+  <body>
+    <div class="case">
+      <div class="nav"><a href="index.html">&larr; Catálogo</a></div>
+      <div class="main">
+        <img src="../images/vivaldi_logo.png" alt="vivaldi logo"/>
+        <h1>Vivaldi</h1>
+        <p>Vivaldi é um navegador web completo e personalizável feito por alguns dos antigos desenvolvedores do Opera (já que eles estavam insatisfeitos com a direção que o Opera estava tomando). Assim como o Opera moderno, ele é baseado no Chromium.</p>
+        <p>Versão testada: 5.2.2623.48</p>
+        <h2>Nível de Spyware: <span class="orange">Alto</span></h2>
+        <p>Vivaldi faz cerca de 119 requisições na inicialização e continua a fazer conexões não solicitadas depois. O anti-privacidade <a href="../articles/bing.html">Bing</a> é o mecanismo de pesquisa padrão.</p>
+        <img class="screenshot" src="../images/vivaldi_spyware2.png"/>
+        <p>Mesmo se você desativar tudo em "Serviços do Google" e "Extensões do Google" em "Privacidade" nas configurações, ele ainda fará requisições automáticas com o Google. Também faz conexões após a primeira inicialização para <code>mirmir.vivaldi.com</code> e <code>downloads.vivaldi.com</code>.</p>
+        <h3>As páginas web da Vivaldi são protegidos pela Cloudflare</h3>
+        <p>Você será bloqueado se estiver usando o Tor e será conectado a <code>hcaptcha.cloudflare.org</code>. Você pode desabilitar isso simplesmente alterando a página inicial.</p>
+        <img class="screenshot" src="../images/vivaldi_spyware3.png"/>
+        <h3>Vivaldi lhe atribui um ID único</h3>
+        <p>De acordo com a Política de Privacidade: <i>"Quando você instala o navegador Vivaldi ("Vivaldi"), cada perfil de instalação recebe um ID de usuário exclusivo que é armazenado em seu computador. Vivaldi enviará uma mensagem usando HTTPS diretamento para nossos servidores localizados na Islandia a cada 24 horas contendo este ID, versão, arquitetura de CPU, resolução de tela e tempo desde a última mensagem. Anonimizamos os endereço IP dos usuários do Vivaldi removendo o último octeto do endereço IP do seu cliente Vivaldi e armazenamos a localização aproximada resolvida após usar um geoip local. O objetivo desta coleção é determinar o número total de usuários ativos e sua distribuição geográfica".</i><sup><a href="s1">[1]</a></sup></p>
+        <h3>Não pode ser compilado a partir do código-fonte</h3>
+        <p>"No entanto, é apenas o nosso trabalho do Chromium que é encontrado em https://vivaldi.com/source. Se você compilar e executá-lo, nada será exibido, pois a interface do usuário HTML/CSS/JS está ausente. Essa interface de usuário final, que são cobertos pelo EULA (no qual também incluímos uma versão compilada do nosso Chromium modificado)."<sup><a href="#s2">[2]</a></sup></p>
+      </div>
+      <hr/>
+      <div class="footer">
+        <div class="sources">
+          <h4>Fontes:</h4>
+          <ol>
+            <li id="s1"><a href="https://vivaldi.com/privacy/browser/">Política de Privacidade do navegador Vivaldi</a> <a href="http://web.archive.org/web/20220516054340/https://vivaldi.com/privacy/browser/">[web.archive.org]</a></li>
+            <li id="s2"><a href="https://www.reddit.com/r/vivaldibrowser/comments/62adz5/the_vivaldi_source_code_license_and_the_eula/dfn7ltm/">A licença do código-fonte Vivaldi e o EULA parecem conflitantes entre si...</a> <a href="https://web.archive.org/web/20180410043927/https://www.reddit.com/r/vivaldibrowser/comments/62adz5/the_vivaldi_source_code_license_and_the_eula/dfn7ltm/">[web.archive.org]</a> <a href="http://archive.li/ZoRUx">[archive.li]</a></li>
+          </ol>
+        </div>
+        <hr/>
+        <b>Este artigo foi criado em 25/11/2017</b>
+        <br/>
+        <b>Este artigo foi editado pela última vez em 31/05/2022</b>
+        <br/>
+        <b>Esta é uma tradução do artigo em Inglês. Pode estar desatualizado. Compare as datas em ambos os artigos.</b>
+        <p>Se você quiser editar este artigo, ou contribuir com seu(s) próprio(s) artigo(s), visite-nos no repositório git no <a href="https://codeberg.org/shadow/SpywareWatchdog">Codeberg</a>.</p>
+        <p>Todas as contribuições devem ser licenciadas sob a licença CC0 para serem aceitas.</p>
+        <a href="../LICENSE.txt"><img class="icon" src="../images/cc0.png" alt="CC0 License"/></a>
+      </div>
+    </div>
+  </body>
+</html>

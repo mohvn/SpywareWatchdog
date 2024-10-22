@@ -1,0 +1,75 @@
+<!--Old Style-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+   <head>
+    <link rel="stylesheet" href="../style.css"/>
+    <meta charset="UTF-8">
+    <title>Iridium Browser — Spyware Watchdog</title>
+  </head>
+  <body>
+  <img src="../images/iridium_logo.png" alt="Iridium Logo">
+  <h1>Iridium Browser</h1>
+  <p>
+    Iridium é um fork focado em privacidade do Google Chrome. De acordo com seu site: "Todas as modificações aumentam a privacidade do usuário e garantem que as tecnologias mais recentes e seguras sejam usadas. A transmissão automática de consultas parciais, palavras-chave e métricas para os serviços centrais é impedida e ocorre apenas com a aprovação do usuário." Ao contrário de outros navegadores do gênero, este é completo (possui todos os complementos disponíveis para o Chrome) e, portanto, é recomendado para o uso diário.
+  </p>
+  <h2>Nível de Spyware: <font color=yellowgreen>Baixo</font></h2>
+  <p>
+    Depois de seguir o <a href="../guides/iridium.html">guia de mitigação</a>, este software é classificado como <font color=lime><b>Não é Spyware</b></font>.
+  </p>
+  <p>
+    A única solicitação não solicitada é para o recurso Google SafeBrowsing e pode ser facilmente desativada no menu Preferências. Além disso, foram adicionados aprimoramentos de privacidade não relacionados ao Google, como bloquear cookies de terceiros por padrão e excluir armazenamento local ao fechar. A lista completa das diferenças entre Chrome e Iridium pode ser encontrada <a href="https://github.com/iridium-browser/tracker/wiki/Differences-between-Iridium-and-Chromium">aqui</a><sup><a href="#1">[1]</a></sup>. No entanto, esta lista <b><font color=red>não é precisa</font></b> e cada afirmação feita deve ser verificada pelo usuário.
+  </p>
+  <h3>Ligando para Casa</h3>
+  <p>
+    O navegador Iridium fará essas requisições ao Google para atualizar uma lista de bloqueio de sites para seu recurso SafeBrowsing: 
+  </p>
+  <img class="screenshot" src="../images/iridium_request.png" alt="Iridium safebrowsing requests">
+  <p>
+    O navegador Iridium também baixará esta lista de bloqueio de um espelho mantido pelos desenvolvedores. Como o navegador da Web está sempre "ligando para casa" para o Google ou para os servidores dos desenvolvedores, essa é uma forma de spyware que pode ser usada para monitorar o uso do programa, bem como a coleta do User-Agent dos usuários do programa. (Consulte o <a href="../articles/http.html">artigo HTTP</a>)
+    Essa requisição é feita 5 minutos após o início do programa, e em seguida, atualizada a cada 30 minutos.
+  </p>
+  <h3>Reivindicações de Privacidade Imprecisas</h3>
+  <p>
+    Os desenvolvedores do Iridium afirmam que, como um dos aprimoramentos de privacidade do Iridium, ele usa o recurso de spyware do Google SafeBrowsing, mas com seu próprio espelho do banco de dados do Google, o que significa que você pode usar o recurso sem ligar constantemente para o Google, mas em vez disso, ligando para os desenvolvedores, que, embora ainda seja uma forma de spyware, é um aumento de privacidade para o usuário<sup><a href="#1">[1]</a></sup>. Pelo menos seria se esta seção fosse realmente verdadeira. Você pode ver que na seção "Ligando para Casa" deste artigo, essa afirmação simplesmente <b><font color=red>não é verdadeira</font></b>, o que é muito ruim porque prejudica a credibilidade das outras alegações de privacidade que a Iridium faz.
+  </p>
+  <p>
+    De acordo com outro escritor, em seus testes o navegador só se conectaria ao iridiumbrowser.de. Portanto, é possivel que essa reivindicação de privacidade seja verdadeira para algumas versões do Iridium e falsa para outras versões do Iridium. A versão do Iridium que liga para o Google é a versão 2018.4 para Windows de 64 bits, testada no Windows 7, se você quiser ver por si mesmo.
+  </p>
+  <p>
+    Não apenas essa reivindicação de privacidade é imprecisa, mas uma Pull Request<sup><a href="#2">[2]</a></sup> foi aberta no GitHub dos desenvolvedores por MAIS DE UM ANO sem resposta da equipe de desenvolvimento. É muito decepcionante ver uma preocupação com a privacidade na frente deste projeto, mas, em seguida, uma atitude negligente com problemas de privacidade de longa data, uma vez que você abre a cortina e analisa um pouco mais as reivindicações que esse navegador faz.</p>
+
+  <hr>
+  <center>
+  <h2>Fontes</h2>
+  <p>
+
+  <a name="1">1.</a>
+  <a href="https://github.com/iridium-browser/tracker/wiki/Differences-between-Iridium-and-Chromium">Diferenças entre o Iridium e o Chromium</a>
+  <a href="http://web.archive.org/web/20180216153314/https://github.com/iridium-browser/tracker/wiki/Differences-between-Iridium-and-Chromium">[web.archive.org]</a>
+  <a href="https://archive.is/H8MsS">[archive.is]</a>
+  <a href="https://via.hypothes.is/https://github.com/iridium-browser/tracker/wiki/Differences-between-Iridium-and-Chromium">[via.hypothes.is]</a><br>
+
+  <a name="2">2.</a>
+  <a href="https://github.com/iridium-browser/tracker/issues/131">Ainda acesso aos servidores de SafeBrowsing do Google</a>
+  <a href="http://web.archive.org/web/20180517043109/https://github.com/iridium-browser/tracker/issues/131">[web.archive.org]</a>
+  <a href="https://archive.li/eayJ1">[archive.is]</a>
+  <br>
+
+  </p>
+
+
+  <hr>
+    <p><b>
+      Esse artigo foi editado pela última vez em 16/05/2018
+  </b></p>
+    <p><b>
+      Esse artigo foi criado em 05/05/2018
+  </b></p>
+    <b>Esta é uma tradução do artigo em Inglês. Pode estar desatualizado. Compare as datas em ambos os artigos.</b>
+    <p>Se você quiser editar este artigo, ou contribuir com seu(s) próprio(s) artigo(s), visite-nos no repositório git no <a href="https://codeberg.org/shadow/SpywareWatchdog">Codeberg</a>.</p>
+    <p>Todas as contribuições devem ser licenciadas sob a licença CC0 para serem aceitas.</p>
+  <a href="../LICENSE.txt"><img class="icon" src="../images/cc0.png" alt="CC0 License"></a>
+  <p><a href="../articles/index.html">Voltar ao Catálogo</a>
+  </center>
+  </body>
+</html>

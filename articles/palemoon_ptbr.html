@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="application/xhtml+xml;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Pale Moon — Spyware Watchdog</title>
+    <link rel="stylesheet" href="../style.css"/>
+  </head>
+  <body>
+    <div class="case">
+      <div class="nav"><a href="index.html">&larr; Catálogo</a></div>
+      <div class="main">
+        <img src="../images/palemoon_logo.png" alt="Pale Moon logo"/>
+        <h1>Pale Moon</h1>
+        <p>Pale Moon é um fork de uma versão antiga do <a href="../articles/firefox_ptbr.html">Firefox</a>, antes da mudança na interface do usuário que desanimava muitas pessoas. A versão 28.4 foi usada para escrever este artigo.</p>
+        <h2>Nível de Spyware: <span class="yellow">Médio</span></h2>
+        <p>Depois de seguir o <a href="../guides/palemoon.html">guia de mitigação</a>, este software é classificado como <span class="lime"><b>Não é Spyware</b></span>.</p>
+        <p>Conecta-se a serviços de análise e essas requisições <b>só podem ser evitadas em execuções subsequentes</b>. Tem listas de bloqueio, sugestões de pesquisa e atualizações automáticas. Envia certificados SSL dos sites que você visita.</p>
+        <h3>Google analytics na Página Inicial</h3>
+        <p>Por padrão, a página inicial do Pale Moon é definida como https://palemoon.start.me, e automaticamente fará uma conexão com ela na primeira execução. Esta página se conecta ao Google Analytics, que pode fazer impressões digitais e rastreá-lo pela internet.</p>
+        <img class="screenshot" src="../images/pm_analytics.png" alt="Google Analytics requests sent by Pale Moon's default homepage"/>
+        <h3>Atualizações automáticas</h3>
+        <p>Pale Moon irá atualizar-se automaticamente, addons e motores de busca, bem como o seu arquivo blocklist.xml com os addons que ele considera "malicioso". Alguns deles podem ser desativados na GUI e outros apenas em about:config.</p>
+        <h3>Sugestões de busca</h3>
+        <p>O mecanismo de pesquisa padrão é o DuckDuckGo que respeita a privacidade, no entando, as sugestões de pesquisa são habilitadas por padrão, o que pode enviar uma solicitação para cada letra que você digitar, enquanto você permanece no navegador até pressionar Enter. Pode ser desativado clicando com o botão direito do mouse na barra de pesquisa.</p>
+        <h3>Consulta OSCP</h3>
+        <p>Verificará automaticamento o certificado SSL de cada site para ver se é válido, o que exige enviá-lo a terceiros. Pode ser desligado a partir da GUI.</p>
+        <h3>Não relacionado a Spyware, mas vale a pena pontuar</h3>
+        <h3>Bloqueando complementos de aprimoramento de privacidade</h3>
+        <p>Pale Moon, por padrão, não permitirá que você instale o addon de aprimoramento de privacidade NoScript, citando esta justificativa para bloquear um addon tão importante: <i>"O NoScript é conhecido por causar problemas graves com um grande (e crescente) número de sites. Para cada site visitado, o NoScript causará problemas de exibição e problemas funcionais."</i><sup><a href="#s1">[1]</a></sup> <b><span class="yellow">Para desabilitar esta lista de bloqueio, defina <code>extensions.blocklist.enabled</code> para <code>falso</code> em about:config.</span></b></p>
+      </div>
+      <hr/>
+      <div class="footer">
+        <div class="sources">
+          <h4>Fontes:</h4>
+          <ol>
+            <li id="s1"><a href="https://blocklist.palemoon.org/info/?id=pm112">Este Add-on para seu navegador foi bloqueado ou desativado</a> <a href="https://web.archive.org/web/20180514135250/http://blocklist.palemoon.org/info/?id=pm112">[web.archive.org]</a> <a href="https://archive.is/EiraE">[archive.is]</a> <a href="https://ghostarchive.org/archive/q9Ijt?kreymer=false">[ghostarchive.org]</a></li>
+          </ol>
+        </div>
+        <hr/>
+        <b>Esse artigo foi criado em 19/03/2019</b>
+        </br>
+        <b>Esta é uma tradução do artigo em Inglês. Pode estar desatualizado. Compare as datas em ambos os artigos.</b>
+        <p>Se você quiser editar este artigo, ou contribuir com seu(s) próprio(s) artigo(s), visite-nos no repositório git no <a href="https://codeberg.org/shadow/SpywareWatchdog">Codeberg</a>.</p>
+        <p>Todas as contribuições devem ser licenciadas sob a licença CC0 para serem aceitas.</p>
+        <a href="../LICENSE.txt"><img class="icon" src="../images/cc0.png" alt="CC0 License"/></a>
+      </div>
+    </div>
+  </body>
+</html>

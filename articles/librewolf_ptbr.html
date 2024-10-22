@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="application/xhtml+xml;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Librewolf — Spyware Watchdog</title>
+    <link rel="stylesheet" href="../style.css"/>
+  </head>
+  <body>
+    <div class="case">
+      <div class="nav"><a href="index.html">&larr; Catálogo</a></div>
+      <div class="main">
+        <img src="../images/librewolf.svg" alt="Librewolf Logo"/>
+        <h1>Librewolf</h1>
+        <p>Librewolf é um fork do Firefox com os principais objetivos em privacidade, segurança e liberdade do usuário.<sup><a href="#s1">[1]</a></sup></p>
+        <p>Versão testada: 95.0.2</p>
+        <h2>Nível de Spyware: <span class="yellowgreen">Baixo</span></h2>
+        <p>Librewolf faz algumas chamadas na inicialização para <code>f.s.s.m.c.qjz9zk</code> que se parece com um endereço obliterado, e <code>shavar.services.mozilla.com</code> que é destinado (no entanto, ele pode ser desativado limpando o URL em <code>browser.safebrowsing.provider.mozilla.updateURL</code>).<sup><a href="#s2">[2]</a></sup> Há também uma tentativa de verificar atualizações sobre a extensão uBlock Origin pré-instalada.</p>
+        <p>Esta é uma grande melhoria em comparação ao Firefox.</p>
+        <img class="screenshot" src="../images/librewolfproxychains1.png" alt="Librewolf connections shows via a terminal running proxychains"/>
+      </div>
+      <hr/>
+      <div class="footer">
+        <div class="sources">
+          <h4>Sources:</h4>
+          <ol>
+            <li id="s1"><a href="https://librewolf.net/">Librewolf</a> <a href="http://web.archive.org/web/20220106170403/https://librewolf.net/">[web.archive.org]</a></li>
+            <li id="s2"><a href="https://gitlab.com/librewolf-community/browser/linux/-/issues/271">Conexão automática com shavar.services.mozilla.com - Librewolf Issue #271 - GitLab</a></li>
+          </ol>
+        </div>
+        <hr/>
+        <b>Esse artigo foi criado em 07/01/2022</b>
+        <br/>
+        <b>Esse artigo foi editado pela última vez em 07/01/2022</b>
+        <br/>
+        <b>Esta é uma tradução do artigo em Inglês. Pode estar desatualizado. Compare as datas em ambos os artigos.</b>
+        <p>Se você quiser editar este artigo, ou contribuir com seu(s) próprio(s) artigo(s), visite-nos no repositório git no <a href="https://codeberg.org/shadow/SpywareWatchdog">Codeberg</a>.</p>
+        <p>Todas as contribuições devem ser licenciadas sob a licença CC0 para serem aceitas.</p>
+        <a href="../LICENSE.txt"><img class="icon" src="../images/cc0.png" alt="CC0 License"/></a>
+      </div>
+    </div>
+  </body>
+</html>

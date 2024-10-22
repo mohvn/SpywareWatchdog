@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+  <meta http-equiv="Content-type" content="application/xhtml+xml;charset=utf-8"/>
+  <title>SRWare Iron — Spyware Watchdog</title>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+
+<body>
+  <div class="case">
+    <div class="nav"><a href="index.html">&larr; Catálogo</a></div>
+    <div class="main">
+      <img src="../images/srware_logo.png" alt="SRWare Iron Logo"/>
+      <h1>SRWare Iron</h1>
+      <p>
+        SRWare Iron é um navegador web gratuito e uma implementação do Chromium pela SRWare da Alemanha.
+      </p>
+      <h2>Nível de Spyware: <span class="red">EXTREMAMENTE ALTO</span></h2>
+      <p>
+        O SRWare Iron afirma ser um navegador Web que respeita a privacidade e é uma alternativa ao spyware <a href="../articles/chrome_ptbr.html">Google Chrome</a> e especificamente, se autodenomina um navegador Web que respeita a privacidade e que visa oferecer aos usuários a experiência do Chrome sem o spyware do Google. No entanto, ao examinar este programa, essas alegações se invalidam instantaneamente. O SRWare Iron se conecta a uma quantidade absolutamente incrível de rastreadores e abre conexões para uma enorme quantidade de servidores em sua primeira execução. Ele faz uma estimativa aproximada de <b><font color="yellow">~400-500 conexões não solicitadas</font></b>, e, na verdade, levou vários minutos para parar de fazer novas requisições e conexões. O SRWare Iron usa o mecanismo de busca de spyware <a href="../articles/bing.html">Bing</a> como seu mecanismo de busca padrão, mas vai além disso e encaminha suas requisições para o Bing através de seus próprios servidores para que ele possa espionar suas pesquisas na Internet também. A conclusão é que este navegador é apenas mais uma falsa iniciativa de privacidade e realmente <b><font color="red">não é melhor que o Chrome</font></b>.
+          </p>
+          <p>
+            A versão 69.0.3600.0 do SRWare Iron foi testada no Windows 7 de 64 bits. MITMproxy, Microsoft Network Monitor 3.4 e Sysinternals ProcMon foram usados para monitor o comportamento deste programa.
+          </p>
+          <h3>Iniciativa de Privacidade Falsa</h3>
+          <p>
+            A SRWare Iron afirma em seu site que é:
+          </p>
+          <p><i>
+            "O Chrome é satisfatório por ter uma renderização de site extremamente rápida, um design elegante e recursos inovadores. Mas também recebe críticas de especialistas em proteção de dados, por motivos como a criação de um ID de usuário exclusivo ou o envio de entradas ao Google para gerar sugestões. O SRWare Iron é uma alternativa real. O navegador é baseado no Chromium e oferece os mesmo recursos que o Chrome, mas sem os pontos críticos que diz respeito à privacidade."
+          </i><sup><a href="#s1">[1]</a></sup></p>
+          <p>
+            A realidade é que você está apenas trocando um produto spyware por outro. Onde o spyware do Chrome foi removido, o spyware do Iron está lá para substituí-lo. Qual veneno você irá tomar? A pior parte é que as pessoas vão ler o que é afirmado no site da SRWare e acreditar sem fazer nenhum teste por si mesmas. Como 
+        <a href="https://dottech.org/23821/srware-iron-a-privacy-oriented-web-browser-built-from-google-chromes-source-code/">este artigo</a>
+        <a href="http://web.archive.org/web/20160327201202/http://dottech.org/23821/srware-iron-a-privacy-oriented-web-browser-built-from-google-chromes-source-code/">[web.archive.org]</a>
+          que apenas copia a lista de comparação do site da Iron sem qualquer investigação real antes de declará-la uma alternativa de privacidade ao Chrome. A coisa mais audaciosa sobre isso é esta citação incrível na seção de FAQ do naveador Iron:
+          </p>
+            <p><i>
+            "Posso realmente verificar se o Iron não envia nenhum dado privado, como você diz? Sim, você pode. Existem ferramentas como o Wireshark, que varre todo o tráfeo da rede. Não conseguimos reconhecer nenhuma atividade óbvia. Mas você pode provar isso pro si mesmo."
+          </i><sup><a href="#s2">[2]</a></sup></p>
+          <p>
+            Que é uma pérola no contexto do que realmente é encontrado ao executar testes no software.
+          </p>
+          <h3>Grande quantidade de conexões na primeira inicialização</h3>
+          <p>
+        Ao iniciar o SRWare Iron pela primeira vez, ele abrirá imediatamente as duas páginas a seguir: <code>https://iron.start.me/us</code> e <code>https://www.srware.net/en/software_srware_iron.php</code>. A página mais ofensiva é o domínio <code>start.me</code> que começa a carregar uma enorme quantidade de spyware de toda a internet. Eu não contei a quantidade específica de requisições, mas estava na faixa de 400-500 (meu software não fornece uma rande quantidade de automações... ou talvez eu não o esteja usando tão bem quanto poderia). Esta <a href="../images/iron_spyware.png">imagem</a> (com 1,06 MB - quase 1/4 do tamanho de todo o site no momento deste artigo!) deve dar uma ideia da quantidade de solicitações pelas quais fui inundado. Demorou um pouco para acabar. Em execuções subsequentes, a quantidade de solicitações foi muito menor. Ele se conectou a plataformas de spyware como Google Analystics e Piwik e executor seus payloads de JavaScript. Havia muitas conexões redundantes com o Google Analytics, então é provável que várias empresas possam enviar seus próprios payloads de análise por meio dessa tela inicial. Assim, fazendo uma impressão digital completa e criando perfis de seu navegador e computador no momento em que você começar a navegar na Internet com seu novo navegador que "respeita a privacidade" - para que todas essas empresas de publicidade possam rastreá-lo aonde quer que você vá!
+          </p>
+          <p> Ao verificar as conexões do naveador no Network Monitor 3.4, você pode ver que ele se conectou a uma grande quantidade de servidores, embora apenas dois domínios tenham sido contatados. <a href="../images/iron_connections.png">Esta screenshot</a> não captura todos os endereços IP que ela conectou, mas deve dar uma ideia.</p>
+          <p>
+            E só para não haver ambiguidade, este aviso é mostrado quando você carrega esta página inicial:
+          </p>
+              <p><i>
+                  "Usamos cookies para personalizar conteúdos e anúncios, fornecer recursos de mídia social e analisar nosso tráfego, também compartilhamos informações sobre seu uso de nosso site com nossos parceiros de mídia social, publicidade e análise que podem combiná-la com outras informações que você forneceu a eles ou que eles coletaram do seu uso de seus serviços."
+          </i></p>
+          <p>
+            Apenas para que não haja dúvidas, você está recebendo cookies de rastreamento por empresas de publicidade.
+          </p>
+          <h3>Redirecionamento de pesquisas na internet através do domínio do desenvolvedor</h3>
+          <p>
+            Depois de terminar de identificar seu navegador web para praticamente todas as empresas de spyware da Internet, você pode começar a fazer pesquisas na Internet com seu novo naveador SRWare Iron. O mecanismo de pesquisa padrão é o mecanismo de pesquisa de spyware <a href="../articles/bing.html">Bing</a>.
+            No entanto, não basta apenas apontar para um mecanismo de pesquisa de spyware... quando você tenta executar uma pesquisa no Bing, é isso que acontece:
+          </p>
+          <img class="screenshot" src="../images/iron_bing.png" alt="SRWare Iron redirecting through its own servers">
+          <p>
+            Basicamente, toda vez que você faz uma busca com seu navegador, suas buscas são enviadas para os servidores do desenvolvedor. Assim o desenvolvedor pode saber exatamente qual é o seu histórico de pesquisas. Suas buscas também estão sendo enviadas através do site <code>wisesearches.com</code>, mas não sei quem são. Então agora, em vez de entregar seu histórico de pesquisa a uma empresa de spyware, o google, você pode entregá-lo a três empresas de spyware, mudando para este navegador. Esta é uma tática muito semelhante à que o navegador spyware <a href="../articles/slimjet_ptbr.html">Slimjet</a> usa, onde encaminha pesquisas para o Bing através dos seus próprios domínios.</p>
+          <h3>Motivações do desenvolvedor SRWare Iron?</h3>
+          <p>
+            Se você se aprofundar em com o SRWare Iron foi criado, poderá entrar algumas informações interessantes de alguns dos desenvolvedores do Chrome sobre motivações por trás da criação desse fork. Mas especificamente esta conversa muito interessante:<sup><a href="#s3">[3]</a></sup>
+          </p>
+          <xmp>
+        <Kmos> Iron: por que não contribuir, em vez de fazer um fork?
+        <Iron> por que removi todo código relacionado à privacidade
+        <Iron> por exemplo as rules
+        <Iron> e o rastreamento de url feito a cada 5 segundos depois de iniciar
+        <Iron> o chrome original se comunica frequentemente com o google... eu odeio isso
+        <jamessan> todos esses deviam ter opções para desativá-los, se não me engano
+        <Iron> sim, mas ainda não tem essas opções
+        <Iron> e ninguém sabe quando o próximo beta será lançado
+        <jamessan>  então vou trabalhar para adicionar essas opções para que estejam lá no próximo lançamento
+        <mgreenblatt> Iron... por que não propor um patch baseado nas definições do pré-processamento que desabilita essas seções que você não gosta, ao invés de abrir um fork do código?
+        <mgreenblatt> (assumindo que tal recurso ainda não exista)
+        <Iron> porque um fork trará muita publicidade para minha pessoa e minha página inicial
+        <Iron> isso significa: muito dinheiro também ;)
+        <Kmos> rotflol
+        <Iron> oque significa rotful?
+        <mgreenblatt> Iron.. você é uma grande corporação para dedicar tanto tempo assim em um fork de alguma coisa tão complicada quanto o chromium?
+        <Kmos> Iron: dá um google sobre
+        <Iron> sim, tenho tempo suficiente
+        <jamessan> heh, você esperar ganhar muito dinheiro fazendo um fork do chromium? isso soa engraçado
+        <Iron> eu não vou ganhar dinheiro pelo fork
+        <Iron> mas eu tenho adsense na minha página ;)
+        <Iron> muitos visitantes -> muitos clickes > muito dinheiro ;)
+        <Kmos> e você acha que o Google vai dar suporte ao seu fork
+        <Kmos> lol
+        <mgreenblatt> Iron... é sempre bom sonhar ;-)
+        <Iron> nós estamos aqui na alemanha
+        <Iron> a imprensa vai adorar o meu fork
+        <Iron> já falei com muitos jornalistas
+        <DrPizza> Por que você está criando um fork?
+        <DrPizza> pra fazer o quê?
+        <Iron> para remover todas as coisas no código fonte que estejam se conectando com o Google ;)
+        <jamessan> para conseguir fama e fortuna
+        <Iron> ninguém aqui confia no google
+        <Iron> os alemães falam: o google é muito mal
+        <jamessan> ainda sim você usa o adsense do google
+          </xmp>
+          <p>
+            Então, isso poderia explicar muito... a motivação para este navegador web existir era monetizar as preocupações com a privacidade gerando tráfego para seu site, onde ele poderia ganhar dinheiro servindo spyware para os próprios usuários que queriam escapar disso. Por isso seu fork é carregado com todos os tipos de spyware de todos os tipos de empresas... com as quais ele provavelmente também ganha algum dinheiro. (por que mais ele iria se dar ao trabalho de integrar essas coisas em seu navegador? Podemos apenas especular.) No final das contas, está bem claro que esse navegador é uma grande farsa e você não deve usá-lo.
+          </p>
+    </div>
+    <hr>
+    <div class="footer">
+      <div class="sources">
+        <h4>Sources:</h4>
+        <ol>
+          <li id="s1">
+            <a href="http://www.srware.net/en/software_srware_iron.php">SRWare Iron: O navegador do futuro — Visão Geral</a>
+            <a href="https://web.archive.org/web/20181118232123/http://www.srware.net/en/software_srware_iron.php">[web.archive.org]</a>
+            <a href="https://archive.is/qMNlG">[archive.is]</a><br>
+          </li>
+          <li id="s2">
+            <a href="https://www.srware.net/en/software_srware_iron_faq.php">SRWare Iron: O navegador do futuro — Perguntas frequentes</a>
+            <a href="https://web.archive.org/web/20180502103925/http://www.srware.net:80/en/software_srware_iron_faq.php">[web.archive.org]</a>
+            <a href="https://archive.fo/TXJbh">[archive.is]</a>
+            <br>
+          </li>
+          <li id="s3">
+            <a href="http://neugierig.org/software/chromium/notes/2009/12/iron.html">A história do Iron</a>
+            <a href="http://web.archive.org/web/20180427094010/http://neugierig.org/software/chromium/notes/2009/12/iron.html">[web.archive.org]</a>
+            <a href="https://ghostarchive.org/archive/Vg0Re?kreymer=false">[ghostarchive.org]</a>
+            <br>
+
+          </li>
+        </ol>
+      </div>
+      <hr>
+      <b>Este artigo foi editado pela última vez em 20/11/2018</b>
+      </br>
+      <!--Dont change-->
+        <b>Esta é uma tradução do artigo em Inglês. Pode estar desatualizado. Compare as datas em ambos os artigos.</b>
+        <p>Se você quiser editar este artigo, ou contribuir com seu(s) próprio(s) artigo(s), visite-nos no repositório git no <a href="https://codeberg.org/shadow/SpywareWatchdog">Codeberg</a>.</p>
+        <p>Todas as contribuições devem ser licenciadas sob a licença CC0 para serem aceitas.</p>
+      <a href="../LICENSE.txt"><img class="icon" src="../images/cc0.png" alt="CC0 License"/></a>
+      <!--Dont change-->
+    </div>
+  </div>
+</body>
+
+</html>

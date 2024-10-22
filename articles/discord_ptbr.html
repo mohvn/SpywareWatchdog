@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="application/xhtml+xml;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Discord — Spyware Watchdog</title>
+    <link rel="stylesheet" href="../style.css"/>
+  </head>
+  <body>
+    <div class="case">
+      <div class="nav"><a href="index.html">&larr; Catálogo</a></div>
+      <div class="main">
+        <img src="../images/discord_logo.png" alt="Discord Logo"/>
+        <h1>Discord</h1>
+        <p>Discord é um aplicativo de mensagens instantânewas para macOs, Windows, GNU/Linux, Android e iOS. O Discord é usado para se comunicar via chat de voz e chat de texto e possui recursos de compartilhamento de imagens e compartilhamento de arquivos.</p>
+        <h2>Nível de Spyware: <span class="red">EXTREMAMENTE ALTO</span></h2>
+        <p><span class="lightgreen">Obrigado a Richard Stallman por se referir ao nosso artigo <a href="https://stallman.org/discord.html">aqui</a>! Nós agradecemos o destaque.</span></p>
+        <a href="../articles/discord.html"><img class="icon" src="../images/discord-no-way-2.gif" alt="Discord? No Way!"/></a>
+        <p>O Discord é um spyware porque coleta todas as informações que passam por sua plataforma de comunicação. Como o Discord é uma plataforma de comunicação centralizada, todas as comunicações devem passar pelos servidores oficiais do Discord, onde todas essas informações podem ser gravadas. A grande maioria dessas informações foi confirmada ser gravada, como todas as comunicações entre os usuários. Também foi confirmado que o Discord usa outros recursos de spyware, como várias formas de telemetria. A principal fonte de receita do Discord vem de investimentos, dos quais recebeu mais de $ 279,3 milhões de dólares<sup><a href="#s4">[4]</a></sup>. O Discord não pode ser compilado a partir do código-fonte e o código-fonte do Discord não é disponível.</p>
+        <h3>Discord não disponibiliza seu código-fonte</h3>
+        <p>É impossível baixar e examinar o código-fonte do Discord, o que significa que é impossível provar que o Discord não é um spyware. Qualquer programa que não disponibilize seu código-fonte é um spyware em potencial.</p>
+        <h3>Discord confirma que coleta grandes quantidades de dados confidenciais do usuário</h3>
+        <p>Discord confirma explicitamente em sua política de privacidade<sup><a href="#s1">[1]</a></sup> que coleta as seguintes informações:</p>
+        <ul>
+          <li>Endereço de IP</li>
+          <li>UUID do dispositivo</li>
+          <li>Endereço de e-mail do usuário</li>
+          <li>Todas as mensagens de texto</li>
+          <li>Todas as imagens</li>
+          <li>Todos os dados VOIP (chat de voz)</li>
+          <li>Taxas de abertura de e-mail enviado pelo Discord</li>
+        </ul>
+        <p>O Discord não confirma explicitamente que coleta essas informações, mas ainda as coleta por padrão:</p>
+        <ul>
+          <li>Logs de todos os outros programas que estão abertos no seu computador</li>
+        </ul>
+        <p>As implicações dessas informações podem ser divididas assim: Ao registrar seu endereço IP, o Discord pode rastrear sua localização geral (tão precisa quanto em qual condado você está). O Discord também pode dizer quais dispositivos você usa, pois identifica exclusivamente cada dispositivo e quanto você usa esses dispositivos, pois pode registrar seus hábitos de uso do dispositivo (já que o Discord geralmente é aberto em segundo plano para receber mensagens). O Discord também registra todas as interações que você tem com outros usuários por meio de seu serviço. Isso significa que o Discord confirma que registra todas as conversas que você tem através do Discord, e grava tudo o que você diz no Discord, e visualiza todas as imagens que você envia através do Discord. Portanto, nenhuma de suas interações no Discord é privada. A política de privacidade do Discord também contém várias ocorrências de frases como "incluindo, mas não limitado a", que é uma confirmação explícita de que o Discord contém mais recursos de spyware que não são divulgados ao usuário."</p>
+        <h3>O Discord contém recursos que permitem a integração com outras plataformas de spyware</h3>
+        <p>O Discord contém o recurso de spyware opcional conhecido como "integração de mídia social". Isso permite que você sincronize sua identidade de usuário persistente em outras plataformas de spyware, como Facebook e Twitter. Em sua política de privacidade<sup><a href="#s1">[1]</a></sup>, o Discord confirmou que, se você optar por esse recurso de spyware, o Discord obterá uma quantidade não revelada de acesso às informações obtidas sobre você pelas plataformas de spyware com as quais você escolher sincronizar.</p>
+        <h3>Discord contém um registrador de processos</h3>
+        <p>O Discord confirma que monitora os processos abertos em seu sistema operacional. Este é um recurso de spyware conhecido como "process logger" que geralmente é usado para registrar seus hábitos de uso do programa. Isso foi confirmado pelo CTO do Discord em um tópico do Reddit.<sup><a href="#s2">[2]</a></sup> No mesmo tópico, o CTO também elabora que esse recurso de spyware (o monitoramento de processos) é obrigatório para vários recursos da plataforma. O CTO e um engenheiro do Discord afirmam que o Discord não usa o registrador de processos para enviar registros dos processos abertos no computador do usuário.</p>
+        <p>O teste para provar que Discord monitora processos foram feitos novamente pelo escritor no procmon em 11/04/2019 e com os recursos "Usar dados para personalizar minha experiência no Discord" e "Exibir o jogo em execução no momento como uma mensagem de status" desativados. O Discord <span class="lime"><b>NÃO</b></span> registrou todos os processos abertos dessa maneira. No entanto, ao definir "Exibir o jogo em execução no momento como uma mensagem de status" ativado, o comportamente descrito em<sup><a href="#s2">[2]</a></sup> foi replicado. Você pode ver esse comportamento aqui:</p>
+        <img class="screenshot" src="../images/discord_process_logging.png" alt="Discord process logging as described in [2] confirmed with procmon"/>
+        <p>O Discord afirma que esse recurso pode ser desativado por meio da interface do usuaŕio. Isso é tristemente <a href="https://github.com/snapcrafters/discord/issues/23">falso</a>. Devido à natureza do software de código fechado, não é possível para este artigo ou para os desenvolvedores do Discord provar quanta informação está sendo enviada para os servidores do Discordquando o regitrador de processos está ativado. Mas pelo menos é possível desligá-lo.</p>
+        <h3>O Discord usa seu registro de processo para publicidade</h3>
+        <p>O Discord mostra isso em sua opção de privacidade:</p>
+        <img class="screenshot" src="../images/discord_data.png" alt="Discord process logging usefulness"/>
+        <p>Que os recursos de registro do processo do Discord agora estão sendo registrados nos servidores do Discord como uma forma de telemetria (spyware) e remove as especulações sobre o motivo da existência desse recurso. É esclarecido pelo Discord que esse recurso de spyware é usado para publicidade para seus usuários.<sup><a href="#s8">[8]</a></sup> Isso significa que o Discord está <span class="red"><b>gravando os programas que você abriu para criar um modelo estatístico de quais programas você pode comprar/licenciar no futuro.</b></span></p>
+        <img class="screenshot" src="../images/discord_2.png" alt="Discord confirms process logging is used for advertising"/>
+        <h3>O Discord tenta forçar alguns usuário a fornecer seus números de telefone</h3>
+        <p>O Discord bloqueará os usuários de seu serviço e não permitirá que continuem a usá-lo sem fornecer seu número de telefone ou entrar em contato com o suporte do Discord. Isso é especialmente verdadeiro para usuário do TOR. Esse tipo de recurso é projetado para extrair informações muito pessoais de seus usuários (números de telefone). Os critérios para bloquear usuários não são conhecidos.</p>
+        <img class="screenshot" src="../images/discord_verify.png" alt="discord phone verification"/>
+        <h3>O Discord recebe solicitações do governo por suas informações</h3>
+        <p>O Discord confirmou em uma correspondência por e-mail<sup><a href="#s6">[6]</a></sup> que recebe solicitações de informações do governo. Portanto, sabemos que o governo potencialmente tem acesso a todas as informações que o Discord coleta sobre você. Você pode ler uma cópia da imagem do e-mail postada na fonte <a href="https://spyware.neocities.org/images/discord%20government%20requests.png">aqui</a> caso o link morra.</p>
+        <hr/>
+        <h2>Especulação sobre o futuro do Discord</h2>
+        <p>Não se sabe se o Discord atualmente está ou não vendendo informações do usuário. Atualmente, o Discord tem sido capaz de aumentar de forma consistente o novo capital de investimento, que está em um nível em que poderia razoavelmente cobrir todos os seus custos operacionais. No entanto, o Discord, como qualquer outra empresa, não existirá em um estado constante de investimento. O Discord terá que passar de um modelo de negócios financiado por investimento para um modelo de receita que depende exclusivamente da geração de receita dos usuários da plataforma.</p>
+        <p>O Discord tem várias maneiras de ganhar dinheiro. Ele pode licenciar emojis e outros recursos do programa como o Discord Nitro<sup><a href="#s5">[5]</a></sup>, ou pode ganhar dinheiro licenciando videogames po meio de sua nova loja online, como concorrente da <a href="../articles/steam.html">Steam</a>. No entanto, essas duas fontes de receita podem não ser suficientes. O Discord arrecadou $ 279,3 milhões de dólares<sup><a href="#s4">[4]</a></sup> e tem que devolver esse investimento. (que é mais de 239,3 milhões de dólares que devem ser pagos.)</p>
+        <p>Se o Discord não for capaz de cumprir sua obrigação com seus investidores, ela tem uma terceira opção - vender informações do usuário para anunciantes. O Discord já está minerando dados de seus usuários para produzir seu sistema de recomendação,<sup><a href="#s8">[8]</a></sup> o que significa que já está transformando sua base de usuários em dados de publicidade extremamente valiosos e vendáveis. O Discord tem 130 milhões de usuários<sup><a href="#s7">[7]</a></sup>, e pode produzir um modelo estatística de quais jogos cada usuário (que não bloqueia os anúncios) possui, joga e deseja comprar. Esta é uma informação incrivelmente valiosa que o Discord pode vender se não conseguir cumprir suas obrigações de lucro com seu modelo de receita atual. Se o Discord fosse uma loja de jogos de sucesso, não precisaria fazer isso. Mas se o Discord tiver problemas financeiros, provavelmente será forçada a liquidar esse ativo.</p>
+      </div>
+      <hr/>
+      <div class="footer">
+        <div class="futher">
+          <h4>Leitura Adicional:</h4>
+          <ol>
+            <li><a href="https://old.reddit.com/r/privacy/comments/8lkb5s/friends_don't_let_friends_use_discord_the/">Amigos não permitem que amigos usem o Discord</a> <a href="https://removeddit.com/r/privacy/comments/8lkb5s/friends_dont_let_friends_use_discord_the/">[removeddit.com]</a> <a href="https://archive.is/Q4N9J">[archive.is]</a> <a href="https://ghostarchive.org/">[ghostarchive.org]</a></li>
+            <li><a href="https://www.tomsguide.com/us/help-me-toms-guide-discord-permissions,review-5104.html">Ajude-me, Guia do Tom: o Discord está me rastreando?</a> <a href="http://archive.is/20180418204656/https://www.tomsguide.com/us/help-me-toms-guide-discord-permissions,review-5104.html">[archive.is]</a> <a href="https://ghostarchive.org/archive/8dKmc?kreymer=false">[ghostarchive.org]</a></li>
+            <li><a href="https://www.youtube.com/watch?v=cn4CENr5NV0">Por que o Discord é lixo</a></li>
+            <li><a href="https://www.youtube.com/watch?v=QN_6AZT92pU">Por que você não deve usar o Discord</a></li>
+            <li><a href="http://subvert.pw/res/discord.pdf">A SITUAÇÃO DO DISCORD</a> <a href="https://web.archive.org/web/20180528205030/http://subvert.pw/res/discord.pdf">[web.archive.org]</a></li>
+          </ol>
+        </div>
+        <hr/>
+        <div class="sources">
+          <h4>Fontes:</h4>
+          <ol>
+            <li id="s1"><a href="https://discordapp.com/privacy">Política de Privacidade do Discord</a> <a href="https://web.archive.org/web/20180528052213/https://discordapp.com/privacy">[web.archive.org]</a> <a href="http://archive.is/20180515102020/https://discordapp.com/privacy">[archive.is]</a> <a href="https://ghostarchive.org/archive/22yke">[ghostarchive.org]</a></li>
+            <li id="s2"><a href="https://www.reddit.com/r/discordapp/comments/43lqyb/why_is_discord_recording_our_open_programs_and/">Por que o Discord está gravando nossos programas abertos e enviando-os?</a> <a href="https://www.removeddit.com/r/discordapp/comments/43lqyb/why_is_discord_recording_our_open_programs_and/">[removeddit.com]</a> <a href="https://web.archive.org/web/20180410043931/https://www.reddit.com/r/discordapp/comments/43lqyb/why_is_discord_recording_our_open_programs_and/">[web.archive.org]</a> <a href="https://archive.li/qFcQA">[archive.is]</a> <a href="https://ghostarchive.org/archive/MQBEv?kreymer=true">[ghostarchive.org]</a></li>
+            <li id="s3"><a href="https://discordapp.com/company">Discord</a> <a href="http://wayback.archive-it.org/all/20171226205723/https://discordapp.com/company">[wayback.archive-it.org]</a> <a href="http://archive.is/20170724163442/https://discordapp.com/company">[archive.is]</a> <a href="https://ghostarchive.org/archive/30TU8">[ghostarchive.org]</a></li>
+            <li id="s4"><a href="https://www.crunchbase.com/organization/discord">Crunchbase</a> <a href="https://web.archive.org/web/20180423015034/https://www.crunchbase.com/organization/discord">[web.archive.org]</a> <a href="http://archive.is/20170724163442/https://discordapp.com/company">[ghostarchive.org]</a></li>
+            <li id="s5"><a href="https://discordapp.com/nitro">Discord Nitro</a> <a href="http://archive.is/20170724163442/https://discordapp.com/company">[archive.is]</a> <a href="https://ghostarchive.org/archive/xbj7M?kreymer=true">[ghostarchive.org]</a></li>
+            <li id="s6"><a href="https://www.reddit.com/r/privacy/comments/80l8se/discord_receives_government_requests_no_plans_on/">Discord recebe pedidos do governo. Não há planos de adicionar criptografia E2E tão cedo.</a> <a href="https://archive.is/JrdJ9">[archive.is]</a> <a href="https://removeddit.com/r/privacy/comments/80l8se/discord_receives_government_requests_no_plans_on/">[removeddit.com]</a> <a href="http://web.archive.org/web/20180228033615/https://www.reddit.com/r/privacy/comments/80l8se/discord_receives_government_requests_no_plans_on/">[web.archive.org]</a> <a href="https://ghostarchive.org/archive/trU1V">[ghostarchive.org]</a></li>
+            <li id="s7"><a href="https://www.statista.com/statistics/746215/discord-user-number/">Número de usuários registrados no Discord</a> <a href="http://web.archive.org/web/20181119040747/https://www.statista.com/statistics/746215/discord-user-number/">[web.archive.org]</a> <a href="https://ghostarchive.org/archive/bK9Ai">[ghostarchive.org]</a></li>
+            <li id="s8"><a href="https://support.discordapp.com/hc/en-us/articles/360004109911">Controles de privacidade de dados</a> <a href="http://web.archive.org/web/20181201004455/https://support.discordapp.com/hc/en-us/articles/360004109911">[web.archive.org]</a> <a href="https://ghostarchive.org/archive/vx3aY">[ghostarchive.org]</a></li>
+          </ol>
+        </div>
+        <hr/>
+        <b>Este artigo foi criado em 23/11/17</b>
+        <br/>
+        <b>Este artigo foi editado pela última vez em 17/08/2021</b>
+        <br/>
+        <b>Esta é uma tradução do artigo em Inglês. Pode estar desatualizado. Compare as datas em ambos os artigos.</b>
+        <p>Se você quiser editar este artigo, ou contribuir com seu(s) próprio(s) artigo(s), visite-nos no repositório git no <a href="https://codeberg.org/shadow/SpywareWatchdog">Codeberg</a>.</p>
+        <p>Todas as contribuições devem ser licenciadas sob a licença CC0 para serem aceitas.</p>
+        <a href="../LICENSE.txt"><img class="icon" src="../images/cc0.png" alt="CC0 License"/></a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="application/xhtml+xml;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Firefox — Spyware Watchdog</title>
+    <link rel="stylesheet" href="../style.css"/>
+  </head>
+  <body>
+    <div class="case">
+      <div class="nav"><a href="index.html">&larr; Catálogo</a></div>
+      <div class="main">
+        <img src="../images/firefox_logo3.png" alt="Firefox logo"/>
+        <h1>Mozilla Firefox</h1>
+        <p>O Mozilla Firefox é um dos navegadores mais populares e dos mais antigos. Seus desenvolvedores ganharam a reputação de ser um "navegador baseado em privacidade e segurança, respeitando o usuário" - mas isso é justificado ou apenas marketing? De fato, ao longo dos anos, eles tomaram várias decisões contra a privacidade (e geralmente contra o usuário), mas este artigo se concentrará exclusivamente na espionagem. Versão testada: 52.5.0, com as configurações padrão. Programa usada para testas requisições: Mitmproxy.</p>
+        <h2>Nível de Spyware: <span class="orange">Alto</span></h2>
+        <p>Depois de seguir o <a href="../guides/firefox.html">guia de mitigação</a>, este software <span class="lime"><b>Não é Spyware</b></span>.</p>
+        <p>Ele envia muitos dados diferentes com muita frequência (alguns dos quais podem identificá-lo exclusivamente). Todos os "serviços" que ele fornece, como seus mecanismos de padrão e o Pocket, são contra a privacidade. A classificação não é mais alta porque pelo menos você pode desativar ou modificar a maior parte, embora muitas vezes exija uma pesquisa profunda em about:config.</p>
+        <h3>Ligando para casa</h3>
+        <p>Sempre que você inicia o Firefox, ele faz esta requisição:</p>
+        <img class="screenshot" src="../images/request.png" alt="Request"/>
+        <p>Na verdadem isso acontece toda vez que você acessa um site e até algumas vezes seguidas para um único site. Assim, o Firefox "liga para casa" o tempo todo, sem o seu conhecimento. <b><span class="orange">Pode ser desabilitado SOMENTE em about:config</span></b>. Mas, desde que você já tenha iniciado o Firefox, ele fará essa requisição pelo menos uma vez.</p>
+        <h3>Conexões automáticas com alguns sites que você visitou, incluindo seus rastreadores</h3>
+        <p>Os sites que você visita com mais frequência são adicionados ao painel Nova Guia. Quando você abre uma nova guia, o Firefox às vezes faz requisições para os sites, incluindo alguns de seus rastreadores. Ainda não sabemos como funciona. Às vezes, ele nem faz as requisições; outras vezes você acaba com centenas de imagens, scripts, rastreadores, etc. carregados simplesmente por que você abriu uma nova aba (sem visitar nenhum site explicitamente). <b><span class="red">NÂO fui capaz de encontrar uma maneira de desabilitar isso</span></b>, mesmo em about:config.
+        </p>
+        <h3>Firefox rastreia usuários com o Google Analytics</h3>
+        <p>O Firefox foi integrado à plataforma de spyware chamada "Google Analytics"<sup><a href="#s1">[1]</a></sup>. O Firefox confirmou que agora envia análises para o Google. De acordo com um desenvolvedor do Firefox, o spyware no Firefox é "extremamente útil para nós e já avaliamos o custo/benefício do uso de rastreamento." e que o Firefox não removerá totalmente o suporte do Google Analytics. A posição do Firefox sobre privacidade fica muito clara com esta citação:</p>
+        <p><i>"Queria abordar sua posição: Não fornecemos os "dados diretamente ao Goggle". Veja na discussão aqui: https://bugzilla.mozilla.org/show_bug.cgi?id=858839. A veersão curta é: tl;dr: Agora temos a opção de não permitir que o Google faça qualquer coisa com os dados que o Google Analystics coleta nos sites da Mozilla. O rastreamento do GA é anônimo e em nível agregado e o usamos para melhorar a experiência de nossos sites. Estamos coletando dados agregados e não identificáveis em números para garantir que nossas mudanças de desenvolvimente/UX sejam bem atendidas. Podemos respeitar a privacidade e ainda ter análises; na verdade, o objetivo do Mozilla é uma experiência que valorize a privacidade e usabilidade do usuário (eu diria que a Apple também quer UX que se encaixe nesse molde, por exemplo). Precisamos de alguns dados, anonimizados e agregados, para fazer isso."</i></p>
+        <p>A melhor conclusão para isso é que o Mozilla quer fingir que incluir spyware em seu programa de alguma forma não é uma violação de privacidade, e que o Firefox poderia estar respeitando a privacidade do usuário ao mesmo tempo em que coleta dados sobre os usuários e os envia ao Google. É altamente recomendável ler o tópico do GitHub e as outras declarações contra a privacidade que o funcionário da Mozilla faz enquanto defende os recursos de spyware no Firefox. É muito perigoso afirmar que existe um meio-termo entre respeitar a privacidade do usuário e fazer a mineração de dados do usuário.</p>
+        <h3>Navegação "Segura"?</h3>
+        <p>Supostamente usado para protegê-lo de sites de "phishing", mas no final, ele faz várias solicitações ao Google a cada 30 minutos (de acordo com o Mozilla), incluindo uma requisição POST com sua versão do Firefox e um cookie oculto exclusivo e persistente. Como sempre que o URL atual corresponde a uma entrada na blacklist local em cache, uma requisição é feita aos servidores da Google, ostensivamente para testar se esse site ainda está na blacklist online principal, ele permite que o Google monitore sites específicos de forma transparente para o usuário, colocando os URLs de interesse na blacklist local, mas não na online. <b><span class="orange">Pode ser desabilitado SOMENTE em about:config</span></b>.</p>
+        <img class="screenshot" src="../images/safe_browsing.png" alt="Safe browsing"/>
+        <h3>Relatório de Integridade do Firefox</h3>
+        <p>De uma fonte segura: "Por exemplo, o FHR (Relatório de Integridade do Firefox) envia dados para a Mozilla sobre coisas como: sistema operacional, PC/Mac, número de processadores, versão do Firefox, número e tipo de complementos. Os dados coletados pelo FHR (Relatório de Integridade do Firefox) estão vinculados a um documento de ID que corresponde a uma instalação do navegador (explicada acima na pergunta n° 4) para que os dados possam ser correlacionados em uma janela de tempo ilimitada."<sup><a href="#s2">[2]</a></sup> Além disso, de acordo com a Mozilla, novas versões do Firefox também coletarão dados de telemetria por predefinição. <b><span class="lime">Pode ser desabilitado através da GUI.</span></b></p>
+        <h3>Mecanismos de pesquisa contra a privacidade por padrão</h3>
+        <p>Versões antigas do Firefox tinham o Google como mecanismo de busca padrão, o que é obviamente contra a privacidade. Por exemplo, de sua política de privacidade: "Quando você usa nossos serviços ou visualzia conteúdo fornecido pelo Google, coletamos e armazenamos automaticamente determinadas informações nos logs do servidor. Isso inclui: detalhes de como você usou nosso serviço, como suas consultas de pesquisa.". Depois foi o Yahoo, o que não é melhor.: "A ferramenta Yahoo Search History permite que você veja o que você pesquisou no passado.". Assim, ele salva todas as suas pesquisas. E a exclusão não faz nada: "Mesmo que você limpe suas pesquisas anteriores ou desative a ferramenta de histórico de pesquisa, o Yahoo ainda coleta e armazena dados de log do usuário de pesquisa quando você usa a tecnologia de pesquisa do Yahoo." Firefox 57 está voltando para o Google novamente. Se eles realmente se importassem com sua privacidade, o mecanismo de pesquisa padrão seria o StartPage (que fornece os mesmos resultados que o Google, mas anônimo) ou o DuckDuckGo. <b><span class="lime">Pode ser alterado através da GUI.</span></b></p>
+        <h3>Pocket — um pesadelo da privacidade</h3>
+        <p>O Firefox tem um botão Pocket em sua barra de navegação, que permite "salvar qualquer artigo, vídeo ou página do Firefox" e "Visualizar no Pocket em qualquer dispositivo, a qualquer hora". Vamos ver como fica em termos de privacidade - citando a política de privacidade do Pocket<sup><a href="#s3">[3]</a></sup>: "Além das informações que você nos fornece quando se registra em uma conta de usuário, coletamos informações sobre os URLs, títulos e conteúdo das páginas da web e outras informações que você salva no Pocket." Assim, tudo o que você coloca convenientemente no "seu" Pocket está sendo armazenado (claso, caso contrário, o Pocket não funcionaria). "Os tipos de informações que coletamos incluem o tipo de navegador, tipo de dispositivo, ID do dispositivo, fuso horário, idioma e outras informações relacionadas à maneira como você acessa as tecnologias do Pocket." Assim, sempre que você visualizar um arquivo no "seu" Pocket, eles saberão tudo sobre o dispositivo que você usou para fazer isso. "Também podemos usar "pixel tags", "web beacons", "GIFs" ou meios semelhantes (individual ou coletivamente "Pixel Tags") em conexões com e-mails que enviamos aos nossos usuários para coletar dados de uso." Então, eles estão agindo como qualquer site de rastreamento antigo, mesmo de maneiras que não têm nada a ver com sua funcionalidade. "Também podemos compartilhar o ID do seu dispositivo com terceiros em relação a campanhas publicitárias." E eles também trabalham com anunciantes! Descrever todas as violações do Pocket ocuparia este artigo inteiro. Existem serviços semelhantes com melhores políticas de privacidade, mas no final, eles ainda armazenam as coisas que você vê na "nuvem". Um navegador baseado em privacidade real não poderia ser integrado a eles por padrão. <span class="yellow"> <b>Pode ser desabilitado em about:config</b></span><sup><a href="#s8">[8]</a></sup></p>
+        <h3>Atualizações automáticas</h3>
+        <p>Não é tão ruim em comparação com todos os itens acima, eu acho - mas ainda instala algo sem o seu consentimento, com possíveis novos pesadelos de privacidade neles. Não há desculpa para pelo menos não ter um "Verificar atualizações, mas deixe-me escolher se quero instalá-las ou não" como padrão - isso ainda daria o benefício de segurança, mas não tiraria o controle do usuário. <b><span class="lime">Pode ser desabilitado através da GUI.</span></b></p>
+        <h3>Outros problemas</h3>
+        <p>Às vezes, o Firefox também faz uma solicitação para "self-repair.mozilla.org" que se parece com isso:</p>
+        <img class="screenshot" src="../images/self_repair.png" alt="self-repair.mozilla.org"/>
+        <p>Ele inclui "optimizelyEndUserId" o que provavelmente significa que <b>identifica você de forma exclusiva. </b><b><span class="orange">Pode ser desabilitado SOMENTE em about:config.</span></b><sup><a href="#s7">[7]</a></sup></p>
+        <p>Ele também faz essa requisição toda vez que você abre a página inicial padrão:</p>
+        <img class="screenshot" src="../images/request2.png" alt="request2"/>
+        <p>O número após a versão do Firefox é, novamente, um <b>identificador único</b>.<sup><a href="#s4">[4]</a></sup><b><span class="orange"> Pode ser desabilitado SOMENTE em about:config.</span></b></p>
+        <p>O Firefox tem um arquivo com uma lista de addons bloqueados que considera "malicioso" e faz uma requisição para atualizá-lo todos os dias (mesmo que você não tenha nenhum addon instalado).</p>
+        <img class="screenshot" src ="../images/blocklist.png" alt="Blocklist"/>
+        <p>A requisição inclui um ID de instalação do navegador de <b>identificação única</b>. <b><span class="orange">Pode ser desabilitado SOMENTE em about:config.</span></b></p>
+        <h3>O Firefox faz ligações para sua origem sobre quase todas as interações que você tem com sua Interface de Usuário</h3>
+        <p>O Firefox enviará informações sobre quase todas as operações básicas que você fizer com o Mozilla. Isso é marcado com um ID de cliente exclusivo e um ID para sua sessão atual, além de qualquer informação relevante relacionada a essa ação. <b><span class="red">Por padrão, os seguintes usos da interface do usuário são relatados ao Mozilla<sup><a href="#s5">[5]</a></sup>:</span></b></p>
+        <ul>
+          <li>Fazer uma pesquisa</li>
+          <li>Clicar em um item principal do site</li>
+          <li>Excluir um item do histórico</li>
+          <li>Bloquear um site</li>
+          <li>Marcar um link como favorito</li>
+          <li>Remover um link como favorito</li>
+          <li>Abrir um link em uma nova janela</li>
+          <li>Abrir um link em uma nova janela anônima</li>
+          <li>Abrir o painel de preferências da nova guia</li>
+          <li>Fechar o painel de preferências da nova guia</li>
+          <li>Solicitar uma visualização de captura de tela personalizada</li>
+          <li>Finalizar a sessão</li>
+          <li>Estatísticas de impressão</li>
+          <li>Clicar/bloquear/salvar_para_pocket ping</li>
+          <li>Falha na inicialização de um addon</li>
+          <li>Cálculo de afinidade de domínio</li>
+        </ul>
+        <p>Essencialmente, embora esse recurso não transmita seu histórico de pesquisa para o Mozilla, ele prova um passo a passo incrivelmente detalhado de exatamente como você usa a interface de usuário do Firefox. Isso pode ser desativado e é um recurso de spyware opcional. Você pode desativá-lo através da GUI conforme descrito aqui: <a href="https://support.mozilla.org/en-US/kb/share-data-mozilla-help-improve-firefox">Compartilhe dados com o Mozilla para ajudar a melhorar o Firefox</a> <a href="http://web.archive.org/web/20181002204159/https://support.mozilla.org/en-US/kb/share-data-mozilla-help-improve-firefox">[web.archive.org]</a> <a href="http://archive.fo/gkVeb">[archive.fo]</a> <a href="https://ghostarchive.org/archive/lzNDJ?kreymer=false">[ghostarchive.org]</a></p>
+       <h3>Permitir rastreadores</h3>
+       <p>O Mozilla tem um recurso chamado "Proteção de rastreamento aprimorada". O objetivo reivindicado desse recurso é proteger o usuário de ser rastreado. Isso seria bom se o Mozilla não colocasse na lista de permissões uma lista enorme de domínios<sup><a href="#s9">[9]</a></sup>.</p> 
+       <h3>Redução dos Spywares do Firefox</h3>
+       <p>Esta revisão também é acompanhada por uma página sobre como configurar o Firefox para respeitar mais a privacidade e links para outros projetos que foram criados para resolver esse problema. Você pode ler sobre isso <a href="../guides/firefox.html">aqui.</a> Estes são algumas opções em about:config mencionados anteriormentes no artigo e os valores que devem ser definidos também:</p>
+        <table>
+          <tr>
+            <th>Recurso Spyware</th>
+            <th>Opção no about:config</th>
+            <th>Valor no about:config</th>
+            <th>Fonte</th>
+          </tr>
+          <tr>
+            <td>Ligando para casa</td>
+            <td>network.captive-portal-service.enabled</td>
+            <td>False</td>
+            <td><a href="https://support.mozilla.org/en-US/questions/1157121">Desativar captive portal</a> <a href="https://archive.li/57xdG">[archive.li]</a> <a href="https://web.archive.org/web/20180721175100/https://support.mozilla.org/en-US/questions/1157121">[web.archive.org]</a></td>
+          </tr>
+          <tr>
+            <td>Auto-repare</td>
+            <td>browser.selfsupport.url</td>
+            <td>""</td>
+            <td><a href="https://support.mozilla.org/en-US/questions/1067502">Como posso impedir que o firefox se conecte constantemente ao self-repair.mozillia.org</a> <a href="https://archive.li/a17cN">[archive.is]</a> <a href="https://ghostarchive.org/archive/LJbGO">[ghostarchive.org]</a></td>
+          </tr>
+          <tr>
+            <td>Pocket</td>
+            <td>pocket.enabled</td>
+            <td>Falso</td>
+            <td><a href="https://help.getpocket.com/article/1025-disabling-pocket-in-firefox#firefox">Desabilitar Pocket no Firefox</a> <a href="https://archive.li/mWBcp">[archive.is]</a> <a href="https://ghostarchive.org/archive/uFyTF">[ghostarchive.org]</a></td>
+          </tr>
+        </table>
+      </div>
+      <hr/>
+      <div class="footer">
+        <div class="futher">
+          <h4>Leitura Adicional</h4>
+          <ol>
+            <li><a href="https://jojo-website.neocities.org/privacy.html">Configurações do "about:config" no Firefox</a> <a href="http://web.archive.org/web/20180821224202/https://jojo-website.neocities.org/privacy.html">[web.archive.org]</a> <a href="http://archive.is/eyzdE">[archive.is]</a> <a href="https://invidious.snopyta.org/watch?v=UqkeZIPLY5M">A proteção aprimorada contra o rastreamento do Firefox permite o Google, o Instagram... e o Winamp?</a></li>
+          </ol>
+        </div>
+        <hr/>
+        <div class="sources">
+          <h4>Fontes</h4>
+          <ol>
+            <li id="s1"><a href="https://github.com/mozilla/addons-frontend/issues/2785">Google Analytics é usado para rastrear usuários</a> <a href="https://web.archive.org/web/20180511002156/https://github.com/mozilla/addons-frontend/issues/2785">[web.archive.org]</a> <a href="https://archive.li/hF6KB">[archive.li]</a> <a href="https://ghostarchive.org/archive/4X56U?kreymer=false">[ghostarchive.org]</a> <a href="https://via.hypothes.is/https://github.com/mozilla/addons-frontend/issues/2785">[via.hypothes.is]</a></li>
+            <li id="s2"><a href="https://blog.mozilla.org/metrics/fhr-faq">FAQ para o FHR</a> <a href="https://web.archive.org/web/20180513014211/https://blog.mozilla.org/metrics/fhr-faq/">[web.archive.org]</a> <a href="https://ghostarchive.org/search?term=https://blog.mozilla.org/metrics/fhr-faq/">[ghostarchive.org]</a> <a href="https://archive.li/No9Xo">[archive.li]</a></li>
+            <li id="s3"><a href="https://getpocket.com/privacy?t=privacypolicy">Política de Privacidade do Pocket</a> <a href="http://web.archive.org/web/20180410043925/https://getpocket.com/privacy?t=privacypolicy">[web.archive.org]</a> <a href="https://archive.is/dCa2m">[archive.is]</a> <a href="https://ghostarchive.org/archive/69mcK?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s4"><a href="https://abouthome-snippets-service.readthedocs.io/en/latest/data_collection.html">Coleta de dados de Serviços</a> <a href="https://web.archive.org/web/20180410043926/https://abouthome-snippets-service.readthedocs.io/en/latest/data_collection.html">[web.archive.org]</a> <a href="https://archive.li/JDXjv">[archive.li]</a> <a href="https://ghostarchive.org/archive/1Ad5D?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s5"><a href="https://github.com/mozilla/activity-stream/blob/master/docs/v2-system-addon/data_events.md">Métricas que coletamos</a> <a href="https://web.archive.org/web/20180530091900/https://github.com/mozilla/activity-stream/blob/master/docs/v2-system-addon/data_events.md">[web.archive.org]</a> <a href="https://archive.li/aK9Bx">[archive.li]</a> <a href="https://ghostarchive.org/archive/ty2Xt?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s6"><a href="https://support.mozilla.org/en-US/questions/1157121">Desabilitar captive portal</a> <a href="https://archive.li/57xdG">[archive.is]</a> <a href="https://ghostarchive.org/archive/vErK3?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s7"><a href="https://support.mozilla.org/en-US/questions/1067502">Como posso impedir que o firefox se conecte constantemente ao self-repair.mozillia.org</a> <a href="https://archive.li/a17cN">[archive.is]</a> <a href="https://ghostarchive.org/archive/bHz3f?kreymer=false">[ghostarchive.org]</a></li>
+            <li id="s8"><a href="https://help.getpocket.com/article/1025-disabling-pocket-in-firefox#firefox">Desabilitar Pocket no Firefox</a> <a href="https://archive.li/mWBcp">[archive.is]</a> <a href="https://ghostarchive.org/archive/uFyTF">[ghostarchive.org]</a></li>
+            <li id="s9"><a href="https://disconnect.me/trackerprotection/unblocked">Lista de rastreadores na lista de permissões</a> <a href="https://web.archive.org/web/20200411051257/https://disconnect.me/trackerprotection/unblocked">[web.archive.org]</a> <a href="https://ghostarchive.org/archive/PLqhJ?kreymer=false">[ghostarchive.org]</a></li>
+          </ol>
+        </div>
+        <hr/>
+        <b>Esse artigo foi editado pela última vez em 17/08/2021</b>
+        <br/>
+        <b>Esse artigo foi criado em 23/11/2017</b>
+        <br/>
+        <b>Esta é uma tradução do artigo em Inglês. Pode estar desatualizado. Compare as datas em ambos os artigos.</b>
+        <p>Se você quiser editar este artigo, ou contribuir com seu(s) próprio(s) artigo(s), visite-nos no repositório git no <a href="https://codeberg.org/shadow/SpywareWatchdog">Codeberg</a>.</p>
+        <p>Todas as contribuições devem ser licenciadas sob a licença CC0 para serem aceitas.</p>
+        <a href="../LICENSE.txt"><img class="icon" src="../images/cc0.png" alt="CC0 License"/></a>
+      </div>
+    </div>
+  </body>
+</html>

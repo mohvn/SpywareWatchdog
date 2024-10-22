@@ -1,0 +1,95 @@
+<!--Old Style-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+   <head>
+    <link rel="stylesheet" href="../style.css"/>
+    <meta charset="UTF-8">
+    <title>Snapchat — Spyware Watchdog</title>
+  </head>
+  <body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <img src="../images/snapchat_logo.png" alt="Snapchat Logo">
+  <h1>Snapchat</h1>
+  <p>
+Snapchat, desenvolvido pela <a href="https://en.wikipedia.org/wiki/Snap_Inc">Snap Inc</a>, foi projetado para ser um aplicativo de smartphone gratuito e divertido para enviar mensagens como "Snaps" para seus amigos. É popular entre adolescentes e millennials, mas pessoas mais velhas também começaram a usar o aplicativo. 
+  </p>
+  <h2>Nível de Spyware: <font color="red">EXTREMAMENTE ALTO</font></h2>
+
+  <h3>Ele identifica você com seu IP</h3>
+  <p>
+O Snapchat registra constantemente seu IP, mesmo se o aplicativo estiver fechado e não estiver em execução no telefone<sup><a href="#1">[1]</a></sup>. Além disso, combina todos esses endereços IP registrados para criar um registro da pessoa. Esse registro pode ajudar a identificar quais cidades/países o usuário visitou ou em que reside. Além disso, pode ajudar a localizar a casa do usuário sem usar o GPS. Este recurso é obrigatório e não há como desativá-lo, no entanto, pode-se usar uma VPN ou rede Tor, embora tenha sido relatado que o Snapchat agora está colocando redes VPN na lista negra e nós de saída Tor<sup><a href="#2">[2]</a></sup> alegando que eles "detectaram atividade suspeita", forçando o usuário a revelar seu endereço IP real.
+  </p>
+
+  <h3>Exige avaliação de permissões demais e pune o usuário por não conceder permissões</h3>
+<p>
+  Para um aplicativo de mídia social simples, o Snapchat exige muitas permissões. Quanto o testei no meu telefone Android sobressalente, ele queria acesso a:
+</p>
+<ul>
+<li>Nome completo do proprietário do telefone</li>
+<li>Contatos telefônicos</li>
+<li>Calendário do telefone</li>
+<li>Localização GPS exata</li>
+<li>Enviar e receber mensagens SMS (que pode custar dinheiro)</li>
+<li>Todos os arquivos do telefone e arquivos no cartão MicroSD</li>
+<li>Camera do telefone</li>
+<li>Microfone do telefone</li>
+<li>Informações de identificação do dispositivo: número IEMI, operadora, status do SIM, número de telefone</li>
+<li>COntrolar o motor do vibrador do telefone</li>
+</ul>
+<p>Para completar, o Snapchat punirá o usuário por negar muitas permissões. Quando eu estava testando o aplicativo, ele me bloqueava se eu não desse permissão para acessar todos os meus arquivos. Também não me deixaria gravar vídeo se eu não desse acesso ao microfone.</p>
+
+<h3>Ele contém um registrador de localização GPS</h3>
+<p>Além de rastrear os IPs, o Snapchat registra localizações tiradas do GPS do telefone em momentos aleatórios<sup><a href="#4">[4]</a></sup>. Se isso não fosse assustador o suficiente, o Snapchat ainda vende esses dados para anunciantes terceirizados. Além disso, o Snapchat introduziu o SnapMap, um recurso que mostra onde seus amigos estão localizados. As pessoas relataram ter sua localização transmitida a todos os seus amigos<sup><a href="#5">[5]</a></sup> embora não aceitassem nenhuma permissão. Isso é perigoso, pois pode transmitir sua localização para perseguidores em potencial e o usuário nem percebe.
+</p>
+
+<h3>Você deve fornecer um número de telefone ou e-mail</h3>
+<p>Se registrar IPs e localizações de GPS não bastasse, o Snapchat agora bloqueará contas que não forneceram um e-mail ou número de telefone<sup><a href="#3">[3]</a></sup>. O Snapchat permitirá que você use o aplicativo por um período de carência antes de bloqueá-lo e exigir um e-mail ou número de telefone para recuperar sua conta. A duração desse período de carência é desconhecida.</p>
+
+<h3>Você deve usar o cliente oficial</h3>
+<p>Se um usuário está farto da grande quantidade de informações que o cliente oficial do Snapchat coleta sobre você, ele NÃO PODE mudar para o cliente de terceiros. Fazer isso é estritamente proibido. O Snapchat possui um serviço projetado para capturar usuários usando clientes de terceiros e bloquear permanentemente sua conta. Isso força o usuário a usar o cliente oficial que contém o spyware.</p>
+
+  <hr>
+  <center>
+  <h2>Fontes</h2>
+  <p>
+  <a name="1">1.</a>
+  <a href="https://www.snap.com/en-US/privacy/privacy-policy/">Política de Privacidade da Snap Inc</a>
+  <a href="https://web.archive.org/web/20190213100848/https://www.snap.com/en-US/privacy/privacy-policy/">[web.archive.org]</a>
+  <br>
+
+  <a name="2">2.</a>
+  <a href="https://support.snapchat.com/en-US/a/blocked-network">Guia de solução de problemas do Snapchats</a>
+  <a href="http://archive.fo/WeNig">[archive.fo]</a>
+  <br>
+
+  <a name="3">3.</a>
+  <a href="https://www.player.one/snapchat-account-locked-why-it-happened-and-how-unlock-your-account-524999">Artigo do Player One sobre contas bloqueadas do Snapchat</a>
+  <a href="https://web.archive.org/web/20190121224137/https://www.player.one/snapchat-account-locked-why-it-happened-and-how-unlock-your-account-524999">[web.archive.org]</a>
+  <br>
+
+  <a name="4">4.</a>
+  <a href="https://support.snapchat.com/en-US/a/download-my-data">Dados de solicitação do Snapchat</a>
+  <a href="http://archive.fo/lzoDg">[archive.fo]</a>
+  <br>
+
+
+  <a name="5">5.</a>
+  <a href="https://www.theverge.com/2017/6/23/15864552/snapchat-snap-map-privacy-threat">Artigo de Verge no Snapmap</a>
+  <a href="https://web.archive.org/web/20190223064446/https://www.theverge.com/2017/6/23/15864552/snapchat-snap-map-privacy-threat">[web.archive.org]</a>
+  <br>
+  </p>
+
+  <hr>
+  <p><b>
+  Este artigo foi editado pela última vez em 23/02/2019
+  </b></p>
+   <p>
+        <b>Esta é uma tradução do artigo em Inglês. Pode estar desatualizado. Compare as datas em ambos os artigos.</b>
+        <p>Se você quiser editar este artigo, ou contribuir com seu(s) próprio(s) artigo(s), visite-nos no repositório git no <a href="https://codeberg.org/shadow/SpywareWatchdog">Codeberg</a>.</p>
+        <p>Todas as contribuições devem ser licenciadas sob a licença CC0 para serem aceitas.</p>
+ </p>
+  <a href="../LICENSE.txt"><img class="icon" src="../images/cc0.png" alt="CC0 License"></a>
+  <p><a href="../articles/index.html">Voltar para o catálogo</a></p>
+  </center>
+  </body>
+</html>

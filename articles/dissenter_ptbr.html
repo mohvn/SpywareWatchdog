@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="application/xhtml+xml;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Dissenter — Spyware Watchdog</title>
+    <link rel="stylesheet" href="../style.css"/>
+  </head>
+  <body>
+    <div class="case">
+      <div class="nav"><a href="index.html">&larr; Catalog</a></div>
+      <div class="main">
+        <img src="../images/dissenter_logo.png" alt="Dissenter Logo"/>
+        <h1>Dissenter</h1>
+        <p>Dissenter é um navegador web e plugin lançado pela empresa de rede social Gab.</p>
+        <h2>Nível de Spyware: <span class="orange">Alto</span></h2>
+        <p>O navegador Dissenter é um fork do navegador <a href="../articles/brave_ptbr.html">Brave</a>. Ele faz ligações com o Brave para atualizações automáticas e navegação segura, que é hospedada pelo Brave. O mecanismo de pesquisa padrão é o <a href="../articles/duckduckgo.html">DuckDuckGo</a>. O navegador vem com duas extensões pré-instaladas. Uma extensão, "Shields", bloqueia certos scripts de propaganda. O outro "Dissenter", permite acessar a rede social Dissenter. Essa extensão faz ligações para vários lugares sempre que você o abre, incluindo Google e Twitter. A rede social Dissenter também deve, inerentemente, coletar mais informações sobre os hábitos de navegação do usuário do que as alternativas atuais que já existem. Também não ajuda que sua política de privacidade esteja basicamente vazia.</p>
+        <h3>Ligando para casa</h3>
+        <p>Quando o navegador Dissenter é iniciado, ele fará várias conexões com os serviços de atualização automática do Brave:</p>
+        <img class="screenshot" src="../images/dissenter_phone_home_1.png" alt="Dissenter Browser phoning home to Brave"/>
+        <p>De vez em quando, o navegador enviará uma requisição para a instância do Brave do serviço de navegação segura do Google:</p>
+        <img class="screenshot" src="../images/dissenter_safebrowsing.png" alt="Dissenter Browser phoning home to Brave"/>
+        <p>Sempre que a extensão Dissenter for aberta, ele fará ligações para várias empresas:</p>
+        <img class="screenshot" src="../images/dissenter_ext_ph.png" alt="Dissenter Extension phoning home"/>
+        <p>Isso inclui:</p>
+        <ul>
+          <li>Google</li>
+          <li>Twitter</li>
+          <li>Doubleclick (Empresa de telemetria de propriedade da Google)</li>
+          <li>FontAwesome</li>
+          <li>Cloudflare</li>
+        </ul>
+        <p>Isso acontece toda vez que a extensão é aberta.</p>
+        <h3>Opção de Telemetria</h3>
+        <p>O Dissenter enviará relatórios de falhas para o Gab automaticamente. Isso está ativado por padrão e você tem a opção de desativá-lo.</p>
+        <p><i>"Quando o Gab trava, ele cria um relatório que pode ser enviado a nós para nos ajudar a corrigir o que causou o problema. Este relatório contém informações técnicas sobre seu sistema de computador que são tipicamente distintas. Você pode escolher se deseja nos enviar esses relatórios. Mesmo que você tenha optado por enviar relatórios no passado, pode desativar relatórios futuros nas configurações. Os relatórios de falhas podem conter informações pessoais"</i> <sup><a href="#s1">[1]</a></sup>.</p>
+        <h3>Dissenter ignora seu próprio filtro rastreador</h3>
+        <p>O Dissenter vem com seu próprio bloqueador de conteúdo chamado Shields, destinado a bloquear rastreadores enquanto você navega na web. Esse bloqueador de conteúdo pode bloquear solicitações feitas por sites comuns, mas não bloqueia o conteúdo carregado pela extensão Dissenter. A extensão Dissenter faz solicitações para rastreadores que seriam bloqueados por seu próprio filtro por seus <b><span class="yellow">próprios padrões</span></b>. O Dissenter faz conexões com sites de rastreamento que não são necessários e não privados. O site de spyware <code>googleads.g.doubleclick.net</code> é bloqueado corretamente por Shields quando um site normal tenta acessá-lo, mas essa conexão não é bloqueada quando o Dissenter acessa... Este é um padrão duplo interessante quando se trata de privacidade.</p>
+        <img class="screenshot" src="../images/sheilds_blocking.png" alt="Sheilds blocking"/>
+        <h3>Problemas particulares do Dissenter</h3>
+        <p>Dissenter tem um problema em particular de associar as páginas web que você visitou com as discussões que você está tendo ou tentando ter. Se você quiser checar os comentários de um artigo no Dissenter, você tem que dizer ao Gab que você visitou aquele artigo. Isso dá ao Gab um perfil muito bom de quais sites você visita e quais artigos você lê. Atualmente, existem alternativas a este modelo que já estão em vigor. Por exemplo, você pode criar um tópico em um Imageboard, site semelhante ao Reddit ou outro formato de fórum da Web, que define um link arquivado para o artigo como tópico de discussão. Esse formato é muito mais privado porque as partes envolvidas têm muito menos informações sobre o que seus usuários fizeram. O site de notícias não tem ideia de quem leu o artigo, porque o tráfego foi para o serviço de arquivamento. O fórum que você pode comentar livremente também não sabe quais artigos você viu ou quais discussões você tentou ter. Se considerarmos apenas a privacidade, esse método é uma maneira um pouco melhor de atingir esse objetivo.</p>
+      </div>
+      <hr/>
+      <div class="footer">
+        <div class="sources">
+          <h4>Fontes:</h4>
+          <ol>
+            <li id="s1"><a href="https://dissenter.com/about/privacy-policy">Política de Privacidade do Dissenter</a> <a href="https://web.archive.org/web/20190516235423/https://dissenter.com/about/privacy-policy">[web.archive.org]</a> <a href="https://archive.fo/A6AgI">[archive.fo]</a> <a href="https://ghostarchive.org/archive/KTY4t?kreymer=false">[ghostarchive.org]</a></li>
+          </ol>
+        </div>
+        <hr/>
+        <b>Esse artigo foi editado pela última vez em 17/08/2021</b>
+        <br/>
+        <b>Esta é uma tradução do artigo em Inglês. Pode estar desatualizado. Compare as datas em ambos os artigos.</b>
+        <p>Se você quiser editar este artigo, ou contribuir com seu(s) próprio(s) artigo(s), visite-nos no repositório git no <a href="https://codeberg.org/shadow/SpywareWatchdog">Codeberg</a>.</p>
+        <p>Todas as contribuições devem ser licenciadas sob a licença CC0 para serem aceitas.</p>
+        <a href="../LICENSE.txt"><img class="icon" src="../images/cc0.png" alt="CC0 License"/></a>
+      </div>
+    </div>
+  </body>
+</html>
