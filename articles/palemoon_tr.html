@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr-TR" xml:lang="tr-TR">
+
+<head>
+  <meta http-equiv="Content-type" content="application/xhtml+xml;charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pale Moon — Spyware Watchdog</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <div class="case">
+    <div class="nav"><a href="index.html">&larr; Catalog</a></div>
+    <div class="main">
+      <img src="../images/palemoon_logo.png" alt="Pale Moon logo" />
+      <h1>Pale Moon</h1>
+      <p>Pale Moon birçok insanı Firefox'tan soğutan arayüz değişikliğinden önceki eski bir <a
+          href="../articles/firefox.html">Firefox</a> sürümünün çatalıdır. Bu makale hazırlanırken 28.4 sürümü
+        kullanıldı.</p>
+      <h2>Casusluk Derecelendirmesi: <span class="yellow">Orta</span></h2>
+      <p> <a href="../guides/palemoon.html">Düzeltme rehberini</a> uyguladıktan sonra, bu yazılım <span
+          class="lime"><b>Casus Değildir</b></span>.</p>
+      <p>Analitik hizmetlerine bağlanıyor, ve bu istekleri ancak <b>bir sonraki tarayıcıyı çalıştırmanızda</b>
+        kapatabilirsiniz. Engelleme listesi, arama önerileri ve otomatik güncelleme özelliği var. Ziyaret ettiğiniz
+        sitelerden SSL sertifikaları da gönderiyor.</p>
+      <h3>Anasayfada Google Analitik</h3>
+      <p>Varsayılan olarak, Pale Moon anasayfası https://palemoon.start.me olarak ayarlanmış, ve ilk açılışı sırasında
+        otomatik olarak onunla bağlantı kuracaktır. Bu sayfa sizi internet üzerinde tanımlayabilecek Google
+        Analitiklerine bağlanıyor.</p>
+      <img class="screenshot" src="../images/pm_analytics.png"
+        alt="Google Analytics requests sent by Pale Moon's default homepage" />
+      <h3>Otomatik Güncellemeler</h3>
+      <p>Pale Moon; kendisini, eklentileri ve arama motorlarını ve ayrıca Pale Moon üreticisinin "kötü amaçlı" olarak
+        değerlendirdiği eklentilerin bir listesi olan blocklist.xml dosyasını otomatik olarak güncelleyecektir.
+        Bunlardan bazıları ayarlar arayüzünde, bazıları ise yalnızca about:config'den kapatılabilir.</p>
+      <h3>Arama Önerileri</h3>
+      <p>Varsayılan arama motoru, gizliliğe saygılı DuckDuckGo'dur, ancak arama önerileri varsayılan olarak
+        etkinleştirilmiştir. Bu özellik, siz Enter'a basana kadar henüz arama yapmadığınız arama sözcüklerinin
+        yazdığınız her harfi için bir istek gönderebilir,. Arama çubuğuna sağ tıklayarak kapatılabilir.</p>
+      <h3>OCSP sorgulama</h3>
+      <p>Her sitenin SSL sertifikasının geçerli olup olmadığını görmek için otomatik olarak bir kontrol gerçekleştirir,
+        bu da ziyaret ettiğiniz sitenin sertifikasını üçüncü bir tarafa göndermeyi gerektirir. Ayarlar arayüzünden
+        kapatılabilir.</p>
+      <h3>Casus yazılımla ilgili değil, ancak kayda değer</h3>
+      <h3>Gizliliği artıran eklentileri engelleme</h3>
+      <p>Pale Moon, varsayılan olarak gizliliği artıran NoScript eklentisini yüklemenize izin vermez ve bu kadar önemli
+        bir eklentiyi engellemek için şu gerekçeye atıfta bulunuyor: <i>"NoScript'in çok sayıda (ve artan) sayıda web
+          sitesinde ciddi sorunlara neden olduğu biliniyor. Ziyaret edilen her web sitesi için ince ayar yapılmadığı
+          takdirde, NoScript görüntüleme sorunlarına ve işlevsellik sorunlarına neden olacaktır."</i><sup><a
+            href="#s1">[1]</a></sup> <b><span class="yellow">Engelleme listesini devre dışı bırakmak için, about:config
+            üzerinde <code>extensions.blocklist.enabled</code> girdisini <code>false</code> olarak ayarlayın.</span></b>
+      </p>
+    </div>
+    <hr />
+    <div class="footer">
+      <div class="sources">
+        <h4>Kaynaklar:</h4>
+        <ol>
+          <li id="s1"><a href="https://blocklist.palemoon.org/info/?id=pm112">Tarayıcınıza yapılan bu Eklenti engellendi
+              veya devre dışı bırakıldı.</a> <a
+              href="https://web.archive.org/web/20180514135250/http://blocklist.palemoon.org/info/?id=pm112">[web.archive.org]</a>
+            <a href="https://archive.is/EiraE">[archive.is]</a> <a
+              href="https://ghostarchive.org/archive/q9Ijt?kreymer=false">[ghostarchive.org]</a></li>
+        </ol>
+      </div>
+      <hr />
+      <b>Bu makale 19 Mart 2019 tarihinde oluşturuldu</b>
+      <p>Bu makaleyi düzenlemek veya kendi makale(ler)inize katkıda bulunmak istiyorsanız, bizi <a
+          href="https://codeberg.org/shadow/SpywareWatchdog">Codeberg</a> git deposunda ziyaret edin.</p>
+      <p>Tüm katkıların kabul edilebilmesi için CC0 lisansı altında lisanslanması gerekir.</p>
+      <a href="../LICENSE.txt"><img class="icon" src="../images/cc0.png" alt="CC0 License" /></a>
+    </div>
+  </div>
+</body>
+
+</html>
