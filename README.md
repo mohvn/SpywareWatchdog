@@ -3,11 +3,9 @@
 
 </div>
 
-  <h1>Online Spyware Watchdog</h1>
-  This is a mirror git repo for the [Online Spyware Watchdog](https://spyware.neocities.org).
 
-
-
+# Online Spyware Watchdog
+This is a mirror git repo for the [Online Spyware Watchdog](https://spyware.neocities.org).
 
 Feel free to add reviews and translations or edit existing content should you find any bugs, mistakes or dead links. :)
 
